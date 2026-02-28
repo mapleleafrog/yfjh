@@ -14,22 +14,81 @@
 
         body {
             font-family: 'Georgia', serif;
-            background: #faf9f6;
+            background: #ffffff;
             color: #333;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Mushroom decorations */
+        .mushroom {
+            position: fixed;
+            object-fit: contain;
+            pointer-events: none;
+            opacity: 0.2;
+            z-index: 0;
+        }
+
+        .mushroom-left {
+            bottom: 20px;
+            left: 20px;
+            height: 80px;
+            animation: bob 2.5s ease-in-out infinite;
+        }
+
+        .mushroom-right {
+            bottom: 20px;
+            right: 20px;
+            height: 80px;
+            animation: bob-flip 2.5s ease-in-out infinite 0.5s;
+        }
+
+        .mushroom-top {
+            top: 20px;
+            right: 40px;
+            height: 50px;
+            animation: bob 3s ease-in-out infinite 1s;
+            opacity: 0.12;
+        }
+
+        @keyframes bob {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+
+        @keyframes bob-flip {
+
+            0%,
+            100% {
+                transform: scaleX(-1) translateY(0);
+            }
+
+            50% {
+                transform: scaleX(-1) translateY(-8px);
+            }
         }
 
         .container {
-            background: white;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+            background: #ffffff;
+            padding: 48px 40px;
+            border-radius: 12px;
+            border: 1px solid #eee;
             max-width: 480px;
             width: 100%;
+            position: relative;
+            z-index: 1;
         }
 
         h1 {
@@ -38,56 +97,81 @@
             font-size: 1.8rem;
             margin-bottom: 8px;
             color: #2c2c2c;
+            letter-spacing: 0.02em;
         }
 
         .subtitle {
             text-align: center;
-            color: #888;
+            color: #999;
             font-size: 0.9rem;
-            margin-bottom: 32px;
+            margin-bottom: 12px;
+            letter-spacing: 0.05em;
+        }
+
+        .divider {
+            width: 40px;
+            height: 1px;
+            background: #ddd;
+            margin: 0 auto 36px;
         }
 
         label {
             display: block;
             margin-bottom: 6px;
-            font-size: 0.85rem;
-            color: #555;
+            font-size: 0.8rem;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
         }
 
         input,
         select,
         textarea {
             width: 100%;
-            padding: 10px 12px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
+            padding: 10px 0;
+            border: none;
+            border-bottom: 1px solid #ddd;
             font-size: 1rem;
             font-family: inherit;
-            margin-bottom: 20px;
+            margin-bottom: 24px;
+            background: transparent;
+            color: #333;
+            border-radius: 0;
         }
 
         input:focus,
         select:focus,
         textarea:focus {
             outline: none;
-            border-color: #999;
+            border-bottom-color: #333;
+        }
+
+        select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            cursor: pointer;
         }
 
         textarea {
             resize: vertical;
-            min-height: 60px;
+            min-height: 48px;
         }
 
         button {
             width: 100%;
-            padding: 12px;
+            padding: 14px;
             background: #2c2c2c;
             color: white;
             border: none;
-            border-radius: 4px;
-            font-size: 1rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
             cursor: pointer;
             font-family: inherit;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-top: 8px;
+            transition: background 0.2s;
         }
 
         button:hover {
@@ -95,11 +179,11 @@
         }
 
         button:disabled {
-            background: #aaa;
+            background: #ccc;
             cursor: not-allowed;
         }
 
-        /* Honeypot - hidden from humans */
+        /* Honeypot */
         .hp {
             position: absolute;
             left: -9999px;
@@ -107,24 +191,46 @@
 
         #status {
             text-align: center;
-            margin-top: 16px;
-            font-size: 0.95rem;
+            margin-top: 20px;
+            font-size: 0.9rem;
         }
 
         .success {
-            color: #2e7d32;
+            color: #4a7c59;
         }
 
         .error {
-            color: #c62828;
+            color: #c0392b;
+        }
+
+        @media (max-width: 520px) {
+            .container {
+                padding: 32px 24px;
+            }
+
+            .mushroom-left,
+            .mushroom-right {
+                height: 50px;
+            }
+
+            .mushroom-top {
+                display: none;
+            }
         }
     </style>
 </head>
 
 <body>
+
+    <!-- Mushroom decorations -->
+    <img src="https://maplestory.io/api/SEA/220/mob/100004/render/stand" alt="" class="mushroom mushroom-left">
+    <img src="https://maplestory.io/api/SEA/220/mob/100004/render/stand" alt="" class="mushroom mushroom-right">
+    <img src="https://maplestory.io/api/SEA/220/mob/9833390/render/stand" alt="" class="mushroom mushroom-top">
+
     <div class="container">
         <h1>You're Invited</h1>
-        <p class="subtitle">yfjh wedding - 6 December 2026</p>
+        <p class="subtitle">Salmon & Dill &#8212; 6 December 2026</p>
+        <div class="divider"></div>
 
         <form id="rsvpForm">
             <label for="name">Full Name</label>
@@ -133,11 +239,14 @@
             <label for="email">Email</label>
             <input type="email" id="email" required>
 
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" placeholder="e.g. 9123 4567">
+
             <label for="attending">Will you be attending?</label>
             <select id="attending" required>
                 <option value="">Select...</option>
-                <option value="Yes">Yes</option>
-                <option value="No">No</option>
+                <option value="Yes">Yes, I'll be there!</option>
+                <option value="No">Sorry, can't make it</option>
             </select>
 
             <label for="plusone">Plus one name (if any)</label>
@@ -146,7 +255,7 @@
             <label for="dietary">Dietary requirements</label>
             <textarea id="dietary" placeholder="e.g. Vegetarian, no nuts..."></textarea>
 
-            <!-- Honeypot field - bots fill this, humans don't see it -->
+            <!-- Honeypot -->
             <div class="hp">
                 <label for="website">Website</label>
                 <input type="text" id="website" tabindex="-1" autocomplete="off">
@@ -160,14 +269,13 @@
 
     <script>
         // =============================================
-        // CHANGE THIS to your Apps Script deployment URL
+        // Apps Script deployment URL
         // =============================================
         const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbysHx_sxaHpYGR4mODAgfqZm1h6QQ5QpSgfzeJzfWL9looaL-f1hJ5Zb31Z_Cd_nPEE/exec';
 
         document.getElementById('rsvpForm').addEventListener('submit', async (e) => {
             e.preventDefault();
 
-            // Honeypot check
             if (document.getElementById('website').value) return;
 
             const btn = document.getElementById('submitBtn');
@@ -180,6 +288,7 @@
             const payload = {
                 name: document.getElementById('name').value.trim(),
                 email: document.getElementById('email').value.trim(),
+                phone: document.getElementById('phone').value.trim(),
                 attending: document.getElementById('attending').value,
                 plusone: document.getElementById('plusone').value.trim(),
                 dietary: document.getElementById('dietary').value.trim()
@@ -194,17 +303,17 @@
 
                 if (data.status === 'success') {
                     status.className = 'success';
-                    status.textContent = '✓ Thank you! Your RSVP has been received.';
+                    status.textContent = 'Thank you! Your RSVP has been received.';
                     document.getElementById('rsvpForm').reset();
                 } else if (data.status === 'updated') {
                     status.className = 'success';
-                    status.textContent = '✓ Your RSVP has been updated.';
+                    status.textContent = 'Your RSVP has been updated.';
                 } else {
                     throw new Error(data.message || 'Something went wrong');
                 }
             } catch (err) {
                 status.className = 'error';
-                status.textContent = '✗ Error submitting. Please try again.';
+                status.textContent = 'Error submitting. Please try again.';
                 console.error(err);
             } finally {
                 btn.disabled = false;
