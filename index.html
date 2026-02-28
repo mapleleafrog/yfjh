@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding RSVP</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: #faf9f6;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+            max-width: 480px;
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+            font-weight: 400;
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+            color: #2c2c2c;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #888;
+            font-size: 0.9rem;
+            margin-bottom: 32px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 0.85rem;
+            color: #555;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-family: inherit;
+            margin-bottom: 20px;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #999;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 60px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #2c2c2c;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        button:hover {
+            background: #444;
+        }
+
+        button:disabled {
+            background: #aaa;
+            cursor: not-allowed;
+        }
+
+        /* Honeypot - hidden from humans */
+        .hp {
+            position: absolute;
+            left: -9999px;
+        }
+
+        #status {
+            text-align: center;
+            margin-top: 16px;
+            font-size: 0.95rem;
+        }
+
+        .success {
+            color: #2e7d32;
+        }
+
+        .error {
+            color: #c62828;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>You're Invited</h1>
+        <p class="subtitle">yfjh wedding - 6 December 2026</p>
+
+        <form id="rsvpForm">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" required>
+
+            <label for="attending">Will you be attending?</label>
+            <select id="attending" required>
+                <option value="">Select...</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+
+            <label for="plusone">Plus one name (if any)</label>
+            <input type="text" id="plusone">
+
+            <label for="dietary">Dietary requirements</label>
+            <textarea id="dietary" placeholder="e.g. Vegetarian, no nuts..."></textarea>
+
+            <!-- Honeypot field - bots fill this, humans don't see it -->
+            <div class="hp">
+                <label for="website">Website</label>
+                <input type="text" id="website" tabindex="-1" autocomplete="off">
+            </div>
+
+            <button type="submit" id="submitBtn">Submit RSVP</button>
+        </form>
+
+        <div id="status"></div>
+    </div>
+
+    <script>
+        // =============================================
+        // CHANGE THIS to your Apps Script deployment URL
+        // =============================================
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbysHx_sxaHpYGR4mODAgfqZm1h6QQ5QpSgfzeJzfWL9looaL-f1hJ5Zb31Z_Cd_nPEE/exec';
+
+        document.getElementById('rsvpForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            // Honeypot check
+            if (document.getElementById('website').value) return;
+
+            const btn = document.getElementById('submitBtn');
+            const status = document.getElementById('status');
+
+            btn.disabled = true;
+            btn.textContent = 'Submitting...';
+            status.textContent = '';
+
+            const payload = {
+                name: document.getElementById('name').value.trim(),
+                email: document.getElementById('email').value.trim(),
+                attending: document.getElementById('attending').value,
+                plusone: document.getElementById('plusone').value.trim(),
+                dietary: document.getElementById('dietary').value.trim()
+            };
+
+            try {
+                const res = await fetch(SCRIPT_URL, {
+                    method: 'POST',
+                    body: JSON.stringify(payload)
+                });
+                const data = await res.json();
+
+                if (data.status === 'success') {
+                    status.className = 'success';
+                    status.textContent = '✓ Thank you! Your RSVP has been received.';
+                    document.getElementById('rsvpForm').reset();
+                } else if (data.status === 'updated') {
+                    status.className = 'success';
+                    status.textContent = '✓ Your RSVP has been updated.';
+                } else {
+                    throw new Error(data.message || 'Something went wrong');
+                }
+            } catch (err) {
+                status.className = 'error';
+                status.textContent = '✗ Error submitting. Please try again.';
+                console.error(err);
+            } finally {
+                btn.disabled = false;
+                btn.textContent = 'Submit RSVP';
+            }
+        });
+    </script>
+</body>
+
+</html>
