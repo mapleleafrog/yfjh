@@ -1,163 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wedding RSVP</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Georgia', serif;
             background: #ffffff;
             color: #333;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
+        }
+
+        /* ===== HERO BANNER ===== */
+        .hero {
+            width: 100%;
+            padding: 60px 20px 48px;
+            text-align: center;
+            background: #fafafa;
+            border-bottom: 1px solid #f0f0f0;
             position: relative;
-            overflow-x: hidden;
+            overflow: hidden;
         }
-
-        /* Mushroom decorations */
-        .mushroom {
-            position: fixed;
-            object-fit: contain;
+        .hero-mushroom {
+            position: absolute;
+            height: 60px;
+            opacity: 0.12;
             pointer-events: none;
-            opacity: 0.2;
-            z-index: 0;
         }
-
-        .mushroom-left {
-            bottom: 20px;
-            left: 20px;
-            height: 80px;
+        .hero-mushroom.left {
+            bottom: 10px;
+            left: 16px;
             animation: bob 2.5s ease-in-out infinite;
         }
-
-        .mushroom-right {
-            bottom: 20px;
-            right: 20px;
-            height: 80px;
+        .hero-mushroom.right {
+            bottom: 10px;
+            right: 16px;
             animation: bob-flip 2.5s ease-in-out infinite 0.5s;
         }
-
-        .mushroom-top {
-            top: 20px;
-            right: 40px;
-            height: 50px;
-            animation: bob 3s ease-in-out infinite 1s;
-            opacity: 0.12;
-        }
-
-        @keyframes bob {
-
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-8px);
-            }
-        }
-
-        @keyframes bob-flip {
-
-            0%,
-            100% {
-                transform: scaleX(-1) translateY(0);
-            }
-
-            50% {
-                transform: scaleX(-1) translateY(-8px);
-            }
-        }
-
-        .container {
-            background: #ffffff;
-            padding: 48px 40px;
-            border-radius: 12px;
-            border: 1px solid #eee;
-            max-width: 480px;
-            width: 100%;
-            position: relative;
-            z-index: 1;
-        }
-
-        h1 {
-            text-align: center;
+        .hero h1 {
             font-weight: 400;
-            font-size: 1.8rem;
-            margin-bottom: 8px;
+            font-size: 2rem;
             color: #2c2c2c;
             letter-spacing: 0.02em;
+            margin-bottom: 8px;
         }
-
-        .subtitle {
-            text-align: center;
-            color: #999;
+        .hero .names {
+            font-size: 1.1rem;
+            color: #666;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+        .hero .date {
             font-size: 0.9rem;
-            margin-bottom: 12px;
-            letter-spacing: 0.05em;
+            color: #aaa;
+            letter-spacing: 0.08em;
         }
-
-        .divider {
+        .hero .ornament {
+            display: inline-block;
             width: 40px;
             height: 1px;
-            background: #ddd;
-            margin: 0 auto 36px;
+            background: #ccc;
+            vertical-align: middle;
+            margin: 0 12px;
+        }
+        .hero .date-line {
+            margin-top: 12px;
         }
 
+        /* ===== FORM SECTION ===== */
+        .form-section {
+            max-width: 480px;
+            margin: 0 auto;
+            padding: 40px 24px;
+        }
+        .form-section h2 {
+            text-align: center;
+            font-weight: 400;
+            font-size: 1.1rem;
+            color: #999;
+            letter-spacing: 0.06em;
+            margin-bottom: 32px;
+        }
         label {
             display: block;
             margin-bottom: 6px;
-            font-size: 0.8rem;
-            color: #888;
+            font-size: 0.75rem;
+            color: #999;
             text-transform: uppercase;
-            letter-spacing: 0.08em;
+            letter-spacing: 0.1em;
         }
-
-        input,
-        select,
-        textarea {
+        input, select, textarea {
             width: 100%;
             padding: 10px 0;
             border: none;
-            border-bottom: 1px solid #ddd;
+            border-bottom: 1px solid #e0e0e0;
             font-size: 1rem;
             font-family: inherit;
             margin-bottom: 24px;
             background: transparent;
             color: #333;
             border-radius: 0;
+            transition: border-color 0.2s;
         }
-
-        input:focus,
-        select:focus,
-        textarea:focus {
+        input:focus, select:focus, textarea:focus {
             outline: none;
             border-bottom-color: #333;
         }
-
+        input::placeholder, textarea::placeholder {
+            color: #ccc;
+        }
         select {
             -webkit-appearance: none;
             -moz-appearance: none;
             appearance: none;
             cursor: pointer;
         }
-
         textarea {
             resize: vertical;
             min-height: 48px;
         }
-
         button {
             width: 100%;
             padding: 14px;
@@ -165,72 +128,110 @@
             color: white;
             border: none;
             border-radius: 6px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             cursor: pointer;
             font-family: inherit;
-            letter-spacing: 0.08em;
+            letter-spacing: 0.1em;
             text-transform: uppercase;
             margin-top: 8px;
             transition: background 0.2s;
         }
+        button:hover { background: #444; }
+        button:disabled { background: #ccc; cursor: not-allowed; }
 
-        button:hover {
-            background: #444;
-        }
-
-        button:disabled {
-            background: #ccc;
-            cursor: not-allowed;
-        }
-
-        /* Honeypot */
-        .hp {
-            position: absolute;
-            left: -9999px;
-        }
+        .hp { position: absolute; left: -9999px; }
 
         #status {
             text-align: center;
             margin-top: 20px;
             font-size: 0.9rem;
         }
+        .success { color: #4a7c59; }
+        .error { color: #c0392b; }
 
-        .success {
-            color: #4a7c59;
+        /* ===== FOOTER ===== */
+        .footer {
+            text-align: center;
+            padding: 40px 20px 48px;
+            background: #fafafa;
+            border-top: 1px solid #f0f0f0;
+            position: relative;
+        }
+        .footer-mushrooms {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            gap: 24px;
+            margin-bottom: 20px;
+        }
+        .footer-mushrooms img {
+            height: 56px;
+            object-fit: contain;
+            opacity: 0.25;
+        }
+        .footer-mushrooms img:nth-child(1) {
+            animation: bob 2.5s ease-in-out infinite;
+        }
+        .footer-mushrooms img:nth-child(2) {
+            height: 40px;
+            opacity: 0.15;
+            animation: bob 3s ease-in-out infinite 0.3s;
+        }
+        .footer-mushrooms img:nth-child(3) {
+            animation: bob-flip 2.5s ease-in-out infinite 0.6s;
+        }
+        .footer p {
+            font-size: 0.8rem;
+            color: #bbb;
+            letter-spacing: 0.06em;
+        }
+        .footer .venue {
+            font-size: 0.85rem;
+            color: #999;
+            margin-bottom: 4px;
         }
 
-        .error {
-            color: #c0392b;
+        /* ===== ANIMATIONS ===== */
+        @keyframes bob {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-6px); }
+        }
+        @keyframes bob-flip {
+            0%, 100% { transform: scaleX(-1) translateY(0); }
+            50% { transform: scaleX(-1) translateY(-6px); }
         }
 
+        /* ===== MOBILE ===== */
         @media (max-width: 520px) {
-            .container {
-                padding: 32px 24px;
-            }
-
-            .mushroom-left,
-            .mushroom-right {
-                height: 50px;
-            }
-
-            .mushroom-top {
-                display: none;
-            }
+            .hero { padding: 48px 16px 40px; }
+            .hero h1 { font-size: 1.6rem; }
+            .hero .names { font-size: 0.95rem; }
+            .hero-mushroom { height: 40px; }
+            .form-section { padding: 32px 20px; }
+            .footer-mushrooms img { height: 44px; }
+            .footer-mushrooms img:nth-child(2) { height: 32px; }
         }
     </style>
 </head>
-
 <body>
 
-    <!-- Mushroom decorations -->
-    <img src="https://maplestory.io/api/SEA/220/mob/100004/render/stand" alt="" class="mushroom mushroom-left">
-    <img src="https://maplestory.io/api/SEA/220/mob/100004/render/stand" alt="" class="mushroom mushroom-right">
-    <img src="https://maplestory.io/api/SEA/220/mob/9833390/render/stand" alt="" class="mushroom mushroom-top">
+    <!-- ===== HERO BANNER ===== -->
+    <header class="hero">
+        <img src="https://maplestory.io/api/SEA/220/mob/100004/render/stand" alt="" class="hero-mushroom left">
+        <img src="https://maplestory.io/api/SEA/220/mob/100004/render/stand" alt="" class="hero-mushroom right">
 
-    <div class="container">
         <h1>You're Invited</h1>
-        <p class="subtitle">Salmon & Dill &#8212; 6 December 2026</p>
-        <div class="divider"></div>
+        <p class="names">Salmon & Dill</p>
+        <div class="date-line">
+            <span class="ornament"></span>
+            <span class="date">6 December 2026</span>
+            <span class="ornament"></span>
+        </div>
+    </header>
+
+    <!-- ===== RSVP FORM ===== -->
+    <section class="form-section">
+        <h2>Kindly let us know if you can make it</h2>
 
         <form id="rsvpForm">
             <label for="name">Full Name</label>
@@ -265,13 +266,24 @@
         </form>
 
         <div id="status"></div>
-    </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="footer-mushrooms">
+            <img src="https://maplestory.io/api/SEA/220/mob/100004/render/stand" alt="">
+            <img src="https://maplestory.io/api/SEA/220/mob/9833390/render/stand" alt="">
+            <img src="https://maplestory.io/api/SEA/220/mob/100004/render/stand" alt="">
+        </div>
+        <p class="venue">Chui Huay Lim Club</p>
+        <p>We can't wait to celebrate with you</p>
+    </footer>
 
     <script>
         // =============================================
-        // Apps Script deployment URL
+        // CHANGE THIS to your Apps Script deployment URL
         // =============================================
-        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbysHx_sxaHpYGR4mODAgfqZm1h6QQ5QpSgfzeJzfWL9looaL-f1hJ5Zb31Z_Cd_nPEE/exec';
+        const SCRIPT_URL = 'https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID_HERE/exec';
 
         document.getElementById('rsvpForm').addEventListener('submit', async (e) => {
             e.preventDefault();
@@ -322,5 +334,4 @@
         });
     </script>
 </body>
-
 </html>
