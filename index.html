@@ -184,8 +184,8 @@
         .hero .scroll-hint {
             position: absolute;
             bottom: 40px;
-            left: 42%;
-            transform: translateX(-50%);
+            left: 0;
+            right: 0;
             z-index: 2;
             opacity: 0;
             animation: hero-fade-in 1s ease 1.5s forwards;
@@ -1005,25 +1005,6 @@
         </div>
     </header>
 
-    <!-- ===== ABOUT US CARD ===== -->
-    <div class="aboutus-dimmer" id="aboutusDimmer"></div>
-    <div class="aboutus-wrapper">
-        <div class="aboutus-card" id="aboutusCard">
-            <div class="aboutus-label">About Us</div>
-            <h3>Our Little Story</h3>
-            <p>
-                from two computer science teachers
-            </p>
-            <p>
-                to salmon and dill!
-            </p>
-            <p>
-                We're so excited to start the next one, and we'd love for you to be there.
-            </p>
-            <div class="aboutus-signature">yfjh</div>
-        </div>
-    </div>
-
     <!-- ===== RSVP ===== -->
     <section class="section form-section">
         <div class="section-inner">
@@ -1068,6 +1049,31 @@
             </div>
         </div>
     </section>
+
+    <!-- ===== ABOUT US CARD ===== -->
+    <div class="aboutus-dimmer" id="aboutusDimmer"></div>
+    <div class="aboutus-wrapper">
+        <div class="aboutus-card" id="aboutusCard">
+            <div class="aboutus-label">About Us</div>
+            <h3>Our Little Story</h3>
+            <div style="display:flex; justify-content:center; gap:24px; margin-bottom:20px;">
+                <img src="https://maplestory.io/api/SEA/220/mob/100004/render/stand" alt="Salmon"
+                    style="height:56px; opacity:0.5;">
+                <img src="https://maplestory.io/api/SEA/220/mob/8880708/render/stand" alt="Dill"
+                    style="height:56px; opacity:0.5;">
+            </div>
+            <p>
+                from two computer science teachers
+            </p>
+            <p>
+                to salmon and dill!
+            </p>
+            <p>
+                We're so excited to start the next one, and we'd love for you to be there.
+            </p>
+            <div class="aboutus-signature">yfjh</div>
+        </div>
+    </div>
 
     <!-- ===== MOB PATROL ===== -->
     <div class="mob-patrol-section">
