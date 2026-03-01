@@ -1005,6 +1005,31 @@
         </div>
     </header>
 
+    <!-- ===== ABOUT US CARD ===== -->
+    <div class="aboutus-dimmer" id="aboutusDimmer"></div>
+    <div class="aboutus-wrapper">
+        <div class="aboutus-card" id="aboutusCard">
+            <div class="aboutus-label">About Us</div>
+            <h3>Our Little Story</h3>
+            <div style="display:flex; justify-content:center; gap:24px; margin-bottom:20px;">
+                <img src="https://maplestory.io/api/SEA/220/mob/100004/render/stand" alt="Salmon"
+                    style="height:56px; opacity:0.5;">
+                <img src="https://maplestory.io/api/SEA/220/mob/8880708/render/stand" alt="Dill"
+                    style="height:56px; opacity:0.5;">
+            </div>
+            <p>
+                from two computer science teachers
+            </p>
+            <p>
+                to salmon and dill!
+            </p>
+            <p>
+                We're so excited to start the next one, and we'd love for you to be there.
+            </p>
+            <div class="aboutus-signature">yfjh</div>
+        </div>
+    </div>
+
     <!-- ===== RSVP ===== -->
     <section class="section form-section">
         <div class="section-inner">
@@ -1050,31 +1075,6 @@
         </div>
     </section>
 
-    <!-- ===== ABOUT US CARD ===== -->
-    <div class="aboutus-dimmer" id="aboutusDimmer"></div>
-    <div class="aboutus-wrapper">
-        <div class="aboutus-card" id="aboutusCard">
-            <div class="aboutus-label">About Us</div>
-            <h3>Our Little Story</h3>
-            <div style="display:flex; justify-content:center; gap:24px; margin-bottom:20px;">
-                <img src="https://maplestory.io/api/SEA/220/mob/100004/render/stand" alt="Salmon"
-                    style="height:56px; opacity:0.5;">
-                <img src="https://maplestory.io/api/SEA/220/mob/8880708/render/stand" alt="Dill"
-                    style="height:56px; opacity:0.5;">
-            </div>
-            <p>
-                from two computer science teachers
-            </p>
-            <p>
-                to salmon and dill!
-            </p>
-            <p>
-                We're so excited to start the next one, and we'd love for you to be there.
-            </p>
-            <div class="aboutus-signature">yfjh</div>
-        </div>
-    </div>
-
     <!-- ===== MOB PATROL ===== -->
     <div class="mob-patrol-section">
         <p class="patrol-text">Read on for more info!</p>
@@ -1092,32 +1092,7 @@
             id="giantMushroom">
     </div>
 
-    <!-- ===== OUR STORY ===== -->
-    <section class="section section-alt story-section" id="storySection">
-        <div class="section-inner">
-            <div class="section-label reveal">Our Story</div>
-            <h3 class="section-title reveal">How it all began</h3>
-            <div class="section-image placeholder reveal">
-                <span>&#x1F4F7; &nbsp; Your couple photo here</span>
-            </div>
-            <div class="reveal">
-                <p>
-                    What started as two gamers crossing paths online slowly grew into something
-                    neither of us expected. Between late-night MapleStory sessions and long conversations
-                    that stretched past midnight, we found a connection that felt effortless and real.
-                </p>
-                <p>
-                    From our first awkward meetup to exploring hawker centres together, adopting
-                    way too many house plants, and navigating the chaos of BTO applications,
-                    every chapter has been better with the other person in it. We're excited to
-                    start the next one with all of you there.
-                </p>
-                <p style="color: var(--text-muted); font-size: 0.82rem; font-style: italic; margin-top: 20px;">
-                    (Placeholder -- we'll update this with the real version soon!)
-                </p>
-            </div>
-        </div>
-    </section>
+
 
     <!-- ===== GETTING THERE ===== -->
     <section class="section">
@@ -1383,7 +1358,6 @@
         (function () {
             const transition = document.getElementById('giantTransition');
             const mushroom = document.getElementById('giantMushroom');
-            const story = document.getElementById('storySection');
             let triggered = false;
 
             const observer = new IntersectionObserver((entries) => {
@@ -1391,12 +1365,6 @@
                     if (entry.isIntersecting && !triggered) {
                         triggered = true;
                         mushroom.classList.add('running');
-
-                        // Reveal Our Story after mushroom runs past
-                        mushroom.addEventListener('animationend', () => {
-                            story.classList.add('revealed');
-                        });
-
                         observer.unobserve(transition);
                     }
                 });
