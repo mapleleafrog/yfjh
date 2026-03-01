@@ -5,112 +5,291 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Salmon & Dill's Wedding</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap');
+
+        :root {
+            --white: #ffffff;
+            --off-white: #fafaf8;
+            --warm-grey: #f5f4f0;
+            --text: #2c2c2c;
+            --text-light: #777;
+            --text-muted: #aaa;
+            --accent: #d4956a;
+            --accent-soft: #e8c4a8;
+            --border: #ebe9e4;
+            --serif: 'Cormorant Garamond', Georgia, serif;
+            --sans: 'Inter', -apple-system, sans-serif;
+        }
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         body {
-            font-family: 'Georgia', serif;
-            background: #ffffff;
-            color: #333;
+            font-family: var(--sans);
+            background: var(--white);
+            color: var(--text);
             -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        /* ===== MUSHROOM RAIN OVERLAY ===== */
+        #rain-overlay {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: 9999;
+            pointer-events: none;
+            overflow: hidden;
+            transition: opacity 1s ease;
+        }
+        #rain-overlay.fade-out { opacity: 0; }
+        .rain-mushroom {
+            position: absolute;
+            top: -80px;
+            object-fit: contain;
+            pointer-events: none;
+            opacity: 0.7;
         }
 
         /* ===== HERO BANNER ===== */
         .hero {
             width: 100%;
-            padding: 56px 20px 44px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            background: #fafafa;
-            border-bottom: 1px solid #f0f0f0;
+            background: var(--off-white);
+            position: relative;
+            overflow: hidden;
+            padding: 40px 20px;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 120px;
+            background: linear-gradient(to bottom, transparent, var(--white));
+            pointer-events: none;
+        }
+        .hero-mushroom-bg {
+            position: absolute;
+            height: 100px;
+            opacity: 0.06;
+            pointer-events: none;
+        }
+        .hero-mushroom-bg.pos1 { top: 15%; left: 8%; transform: rotate(-10deg); }
+        .hero-mushroom-bg.pos2 { top: 25%; right: 10%; transform: rotate(8deg) scaleX(-1); }
+        .hero-mushroom-bg.pos3 { bottom: 20%; left: 15%; transform: rotate(5deg); }
+        .hero-mushroom-bg.pos4 { bottom: 25%; right: 12%; transform: rotate(-5deg) scaleX(-1); }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        .hero-label {
+            font-family: var(--sans);
+            font-size: 0.7rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            color: var(--accent);
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: hero-fade-in 1s ease 0.5s forwards;
+        }
+        .hero h1 {
+            font-family: var(--serif);
+            font-weight: 300;
+            font-size: 3.2rem;
+            color: var(--text);
+            letter-spacing: 0.02em;
+            line-height: 1.2;
+            margin-bottom: 8px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: hero-fade-in 1s ease 0.7s forwards;
+        }
+        .hero .ampersand {
+            font-style: italic;
+            color: var(--accent);
+            font-weight: 300;
+        }
+        .hero-divider {
+            width: 50px;
+            height: 1px;
+            background: var(--accent-soft);
+            margin: 24px auto;
+            opacity: 0;
+            animation: hero-fade-in 1s ease 0.9s forwards;
+        }
+        .hero .details {
+            font-family: var(--sans);
+            font-size: 0.85rem;
+            font-weight: 400;
+            color: var(--text-light);
+            letter-spacing: 0.1em;
+            line-height: 2;
+            text-transform: uppercase;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: hero-fade-in 1s ease 1.1s forwards;
+        }
+        .hero .scroll-hint {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            opacity: 0;
+            animation: hero-fade-in 1s ease 1.5s forwards;
+        }
+        .scroll-hint span {
+            display: block;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+        .scroll-line {
+            width: 1px;
+            height: 32px;
+            background: var(--accent-soft);
+            margin: 0 auto;
             position: relative;
             overflow: hidden;
         }
-        .hero-mushroom {
+        .scroll-line::after {
+            content: '';
             position: absolute;
-            height: 55px;
-            opacity: 0.12;
-            pointer-events: none;
+            top: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--accent);
+            animation: scroll-drop 1.8s ease-in-out infinite;
         }
-        .hero-mushroom.left {
-            bottom: 10px;
-            left: 16px;
-            animation: bob 2.5s ease-in-out infinite;
+        @keyframes scroll-drop {
+            0% { top: -100%; }
+            100% { top: 100%; }
         }
-        .hero-mushroom.right {
-            bottom: 10px;
-            right: 16px;
-            animation: bob-flip 2.5s ease-in-out infinite 0.5s;
-        }
-        .hero h1 {
-            font-weight: 400;
-            font-size: 1.9rem;
-            color: #2c2c2c;
-            letter-spacing: 0.02em;
-            margin-bottom: 10px;
-        }
-        .hero .names {
-            font-size: 1.05rem;
-            color: #555;
-            letter-spacing: 0.14em;
-            text-transform: uppercase;
-            margin-bottom: 16px;
-        }
-        .hero .details {
-            font-size: 0.88rem;
-            color: #888;
-            letter-spacing: 0.06em;
-            line-height: 1.7;
-        }
-        .hero .ornament {
-            display: inline-block;
-            width: 36px;
-            height: 1px;
-            background: #ccc;
-            vertical-align: middle;
-            margin: 0 10px;
-        }
-        .hero .details-line {
-            margin-top: 4px;
+        @keyframes hero-fade-in {
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        /* ===== FORM SECTION ===== */
+        /* ===== SCROLL ANIMATION CLASSES ===== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .reveal.from-left {
+            transform: translateX(-40px);
+        }
+        .reveal.from-right {
+            transform: translateX(40px);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0) translateX(0);
+        }
+
+        /* ===== SECTION LAYOUT ===== */
+        .section {
+            padding: 80px 24px;
+            position: relative;
+        }
+        .section-inner {
+            max-width: 560px;
+            margin: 0 auto;
+        }
+        .section-alt {
+            background: var(--warm-grey);
+        }
+        .section-label {
+            font-family: var(--sans);
+            font-size: 0.65rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--accent);
+            margin-bottom: 12px;
+        }
+        .section-title {
+            font-family: var(--serif);
+            font-weight: 300;
+            font-size: 1.8rem;
+            color: var(--text);
+            margin-bottom: 24px;
+            line-height: 1.3;
+        }
+        .section p {
+            font-size: 0.92rem;
+            line-height: 1.85;
+            color: var(--text-light);
+            font-weight: 300;
+        }
+        .section p + p { margin-top: 14px; }
+
+        /* ===== RSVP FORM ===== */
         .form-section {
+            background: var(--white);
+        }
+        .form-card {
             max-width: 480px;
             margin: 0 auto;
-            padding: 40px 24px 32px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 40px 32px;
+            box-shadow: 0 4px 40px rgba(0,0,0,0.04);
         }
-        .form-section h2 {
+        .form-card h2 {
+            font-family: var(--serif);
+            font-weight: 300;
+            font-size: 1.5rem;
             text-align: center;
-            font-weight: 400;
-            font-size: 1.05rem;
-            color: #999;
-            letter-spacing: 0.06em;
+            color: var(--text);
+            margin-bottom: 8px;
+        }
+        .form-card .form-sub {
+            text-align: center;
+            font-size: 0.82rem;
+            color: var(--text-muted);
             margin-bottom: 32px;
         }
         label {
             display: block;
             margin-bottom: 6px;
-            font-size: 0.75rem;
-            color: #999;
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: var(--text-muted);
             text-transform: uppercase;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.12em;
         }
         input, select, textarea {
             width: 100%;
-            padding: 10px 0;
+            padding: 12px 0;
             border: none;
-            border-bottom: 1px solid #e0e0e0;
-            font-size: 1rem;
-            font-family: inherit;
-            margin-bottom: 24px;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.95rem;
+            font-family: var(--sans);
+            font-weight: 300;
+            margin-bottom: 22px;
             background: transparent;
-            color: #333;
+            color: var(--text);
             border-radius: 0;
-            transition: border-color 0.2s;
+            transition: border-color 0.3s;
         }
         input:focus, select:focus, textarea:focus {
             outline: none;
-            border-bottom-color: #333;
+            border-bottom-color: var(--accent);
         }
-        input::placeholder, textarea::placeholder { color: #ccc; }
+        input::placeholder, textarea::placeholder {
+            color: #d0d0d0;
+            font-weight: 300;
+        }
         select {
             -webkit-appearance: none;
             -moz-appearance: none;
@@ -118,180 +297,178 @@
             cursor: pointer;
         }
         textarea { resize: vertical; min-height: 48px; }
-        button {
+
+        .submit-btn {
             width: 100%;
-            padding: 14px;
-            background: #2c2c2c;
+            padding: 15px;
+            background: var(--text);
             color: white;
             border: none;
-            border-radius: 6px;
-            font-size: 0.85rem;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-family: var(--sans);
+            font-weight: 500;
             cursor: pointer;
-            font-family: inherit;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.12em;
             text-transform: uppercase;
             margin-top: 8px;
-            transition: background 0.2s;
+            transition: all 0.3s;
         }
-        button:hover { background: #444; }
-        button:disabled { background: #ccc; cursor: not-allowed; }
+        .submit-btn:hover { background: #444; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+        .submit-btn:disabled { background: #ccc; cursor: not-allowed; transform: none; box-shadow: none; }
         .hp { position: absolute; left: -9999px; }
-        #status {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 0.9rem;
-        }
+        #status { text-align: center; margin-top: 20px; font-size: 0.88rem; }
         .success { color: #4a7c59; }
         .error { color: #c0392b; }
 
-        /* ===== MORE INFO CTA ===== */
-        .cta-section {
-            text-align: center;
-            padding: 32px 20px 36px;
-            background: #fafafa;
-            border-top: 1px solid #f0f0f0;
-            border-bottom: 1px solid #f0f0f0;
+        /* ===== MOB PATROL (below form) ===== */
+        .mob-patrol-section {
+            height: 100px;
+            position: relative;
+            overflow: hidden;
+            background: var(--white);
         }
-        .cta-mushroom {
+        .patrol-mob {
+            position: absolute;
+            bottom: 10px;
             height: 64px;
             object-fit: contain;
-            margin-bottom: 12px;
-            animation: run 1.8s ease-in-out infinite;
         }
-        @keyframes run {
-            0%, 100% { transform: translateX(0) translateY(0); }
-            25% { transform: translateX(6px) translateY(-4px); }
-            50% { transform: translateX(0) translateY(0); }
-            75% { transform: translateX(-6px) translateY(-4px); }
-        }
-        .cta-section p {
-            font-size: 1rem;
-            color: #666;
-            letter-spacing: 0.04em;
-        }
-        .cta-section a {
-            color: #e67e22;
-            text-decoration: none;
-            font-weight: 600;
-        }
-        .scroll-arrow {
-            display: inline-block;
-            margin-top: 8px;
-            font-size: 1.2rem;
-            color: #ccc;
-            animation: bounce-down 1.5s ease-in-out infinite;
-        }
-        @keyframes bounce-down {
-            0%, 100% { transform: translateY(0); opacity: 0.5; }
-            50% { transform: translateY(6px); opacity: 1; }
+        .patrol-ground {
+            position: absolute;
+            bottom: 0;
+            left: 0; right: 0;
+            height: 1px;
+            background: var(--border);
         }
 
-        /* ===== INFO SECTIONS ===== */
-        .info-container {
-            max-width: 560px;
-            margin: 0 auto;
-            padding: 0 24px;
+        /* ===== TRANSPORT GRID ===== */
+        .transport-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 12px;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
-        .info-section {
-            padding: 36px 0;
-            border-bottom: 1px solid #f0f0f0;
+        .transport-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
         }
-        .info-section:last-child {
-            border-bottom: none;
+        .transport-card .t-icon {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
         }
-        .info-section h3 {
-            font-weight: 400;
-            font-size: 0.8rem;
+        .transport-card .t-label {
+            font-size: 0.72rem;
+            font-weight: 500;
             text-transform: uppercase;
-            letter-spacing: 0.14em;
-            color: #aaa;
-            margin-bottom: 16px;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            margin-bottom: 6px;
         }
-        .info-section p {
-            font-size: 0.95rem;
-            line-height: 1.75;
-            color: #555;
+        .transport-card p {
+            font-size: 0.88rem !important;
+            line-height: 1.6 !important;
         }
-        .info-section p + p {
-            margin-top: 12px;
-        }
-        .info-section .highlight {
-            color: #333;
-            font-weight: 600;
-        }
-        .info-section a {
-            color: #e67e22;
+        .maps-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 16px;
+            padding: 10px 20px;
+            background: var(--warm-grey);
+            border-radius: 8px;
+            color: var(--accent);
             text-decoration: none;
+            font-size: 0.82rem;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            transition: background 0.2s;
         }
-        .info-section a:hover {
-            text-decoration: underline;
-        }
-        .transport-grid {
-            display: grid;
-            grid-template-columns: auto 1fr;
-            gap: 8px 16px;
-            font-size: 0.92rem;
-            line-height: 1.6;
-            color: #555;
-        }
-        .transport-grid .icon {
-            font-size: 1.1rem;
-            text-align: center;
-        }
+        .maps-link:hover { background: var(--border); text-decoration: none; }
+
+        /* ===== CONTACT CARDS ===== */
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 16px;
-            margin-top: 8px;
+            margin-top: 24px;
         }
         .contact-card {
-            padding: 16px;
-            background: #fafafa;
-            border-radius: 8px;
+            padding: 24px 16px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 12px;
             text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
-        .contact-card .name {
-            font-size: 0.95rem;
-            color: #333;
-            margin-bottom: 4px;
+        .contact-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
         }
-        .contact-card .role {
-            font-size: 0.75rem;
-            color: #aaa;
+        .contact-card .c-name {
+            font-family: var(--serif);
+            font-size: 1.15rem;
+            color: var(--text);
+            margin-bottom: 2px;
+        }
+        .contact-card .c-role {
+            font-size: 0.65rem;
+            font-weight: 500;
+            color: var(--text-muted);
             text-transform: uppercase;
-            letter-spacing: 0.08em;
-            margin-bottom: 8px;
+            letter-spacing: 0.1em;
+            margin-bottom: 12px;
         }
         .contact-card a {
+            color: var(--accent);
+            text-decoration: none;
             font-size: 0.85rem;
+            font-weight: 400;
+        }
+
+        /* ===== DRESS CODE ===== */
+        .dress-badge {
+            display: inline-block;
+            padding: 8px 24px;
+            background: var(--accent-soft);
+            color: var(--text);
+            border-radius: 20px;
+            font-family: var(--serif);
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 16px;
         }
 
         /* ===== FOOTER ===== */
         .footer {
             text-align: center;
-            padding: 36px 20px 44px;
-            background: #fafafa;
-            border-top: 1px solid #f0f0f0;
+            padding: 48px 20px 56px;
+            background: var(--text);
+            color: rgba(255,255,255,0.5);
         }
         .footer-mushrooms {
             display: flex;
             justify-content: center;
             align-items: flex-end;
             gap: 20px;
-            margin-bottom: 16px;
+            margin-bottom: 20px;
         }
         .footer-mushrooms img {
-            height: 48px;
+            height: 44px;
             object-fit: contain;
-            opacity: 0.2;
+            opacity: 0.3;
+            filter: brightness(2);
         }
         .footer-mushrooms img:nth-child(1) { animation: bob 2.5s ease-in-out infinite; }
-        .footer-mushrooms img:nth-child(2) { height: 36px; opacity: 0.12; animation: bob 3s ease-in-out infinite 0.3s; }
+        .footer-mushrooms img:nth-child(2) { height: 32px; opacity: 0.2; animation: bob 3s ease-in-out infinite 0.3s; }
         .footer-mushrooms img:nth-child(3) { animation: bob-flip 2.5s ease-in-out infinite 0.6s; }
         .footer p {
-            font-size: 0.8rem;
-            color: #bbb;
-            letter-spacing: 0.06em;
+            font-family: var(--serif);
+            font-size: 1rem;
+            font-style: italic;
+            font-weight: 300;
         }
 
         /* ===== ANIMATIONS ===== */
@@ -305,174 +482,213 @@
         }
 
         /* ===== MOBILE ===== */
-        @media (max-width: 520px) {
-            .hero { padding: 44px 16px 36px; }
-            .hero h1 { font-size: 1.5rem; }
-            .hero .names { font-size: 0.9rem; }
-            .hero-mushroom { height: 40px; }
-            .form-section { padding: 32px 20px 24px; }
-            .info-container { padding: 0 20px; }
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2.2rem; }
+            .hero-mushroom-bg { height: 60px; }
+            .section { padding: 56px 20px; }
+            .section-title { font-size: 1.5rem; }
+            .form-card { padding: 28px 20px; border-radius: 12px; }
             .contact-grid { grid-template-columns: 1fr; }
-            .footer-mushrooms img { height: 40px; }
-            .footer-mushrooms img:nth-child(2) { height: 28px; }
-            .cta-mushroom { height: 52px; }
+            .patrol-mob { height: 48px; }
+            .mob-patrol-section { height: 72px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- ===== HERO BANNER ===== -->
-    <header class="hero">
-        <img src="https://maplestory.io/api/SEA/220/mob/100004/render/stand" alt="" class="hero-mushroom left">
-        <img src="https://maplestory.io/api/SEA/220/mob/100004/render/stand" alt="" class="hero-mushroom right">
+    <!-- ===== MUSHROOM RAIN ===== -->
+    <div id="rain-overlay"></div>
 
-        <h1>You're Cordially Invited!</h1>
-        <p class="names">Salmon & Dill's Wedding</p>
-        <div class="details">
-            <span class="ornament"></span>
-            <span>6 December 2026 &middot; 6:00 PM</span>
-            <span class="ornament"></span>
+    <!-- ===== HERO ===== -->
+    <header class="hero">
+        <img src="https://maplestory.io/api/SEA/220/mob/100004/render/stand" alt="" class="hero-mushroom-bg pos1">
+        <img src="https://maplestory.io/api/SEA/220/mob/100004/render/stand" alt="" class="hero-mushroom-bg pos2">
+        <img src="https://maplestory.io/api/SEA/220/mob/3210200/render/stand" alt="" class="hero-mushroom-bg pos3">
+        <img src="https://maplestory.io/api/SEA/220/mob/3210200/render/stand" alt="" class="hero-mushroom-bg pos4">
+
+        <div class="hero-content">
+            <div class="hero-label">You're Cordially Invited</div>
+            <h1>Salmon <span class="ampersand">&</span> Dill</h1>
+            <div class="hero-divider"></div>
+            <div class="details">
+                6 December 2026 &middot; 6:00 PM<br>
+                Chui Huay Lim Club
+            </div>
         </div>
-        <div class="details details-line">Chui Huay Lim Club</div>
+
+        <div class="scroll-hint">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
     </header>
 
-    <!-- ===== RSVP FORM ===== -->
-    <section class="form-section">
-        <h2>We would be glad if you can make it!</h2>
-
-        <form id="rsvpForm">
-            <label for="name">Full Name</label>
-            <input type="text" id="name" required>
-
-            <label for="email">Email</label>
-            <input type="email" id="email" required>
-
-            <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" placeholder="e.g. 9123 4567">
-
-            <label for="attending">Will you be attending?</label>
-            <select id="attending" required>
-                <option value="">Select...</option>
-                <option value="Yes">Yes, I'll be there!</option>
-                <option value="No">Sorry, can't make it</option>
-            </select>
-
-            <label for="plusone">Plus one name (if any)</label>
-            <input type="text" id="plusone">
-
-            <label for="dietary">Dietary requirements</label>
-            <textarea id="dietary" placeholder="e.g. Vegetarian, no nuts..."></textarea>
-
-            <!-- Honeypot -->
-            <div class="hp">
-                <label for="website">Website</label>
-                <input type="text" id="website" tabindex="-1" autocomplete="off">
+    <!-- ===== RSVP ===== -->
+    <section class="section form-section">
+        <div class="section-inner">
+            <div class="reveal">
+                <div class="section-label" style="text-align:center;">RSVP</div>
             </div>
+            <div class="form-card reveal">
+                <h2>We would be glad if you can make it!</h2>
+                <p class="form-sub">Please respond by 15 November 2026</p>
 
-            <button type="submit" id="submitBtn">Submit RSVP</button>
-        </form>
+                <form id="rsvpForm">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" required>
 
-        <div id="status"></div>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" placeholder="e.g. 9123 4567">
+
+                    <label for="attending">Will you be attending?</label>
+                    <select id="attending" required>
+                        <option value="">Select...</option>
+                        <option value="Yes">Yes, I'll be there!</option>
+                        <option value="No">Sorry, can't make it</option>
+                    </select>
+
+                    <label for="plusone">Plus one name (if any)</label>
+                    <input type="text" id="plusone">
+
+                    <label for="dietary">Dietary requirements</label>
+                    <textarea id="dietary" placeholder="e.g. Vegetarian, no nuts..."></textarea>
+
+                    <div class="hp">
+                        <label for="website">Website</label>
+                        <input type="text" id="website" tabindex="-1" autocomplete="off">
+                    </div>
+
+                    <button type="submit" class="submit-btn" id="submitBtn">Submit RSVP</button>
+                </form>
+                <div id="status"></div>
+            </div>
+        </div>
     </section>
 
-    <!-- ===== MORE INFO CTA ===== -->
-    <section class="cta-section" id="cta">
-        <img src="https://maplestory.io/api/SEA/220/mob/100004/render/move" alt="" class="cta-mushroom">
-        <p>Scroll down for more details!</p>
-        <span class="scroll-arrow">&#x25BE;</span>
+    <!-- ===== MOB PATROL ===== -->
+    <div class="mob-patrol-section">
+        <img src="https://maplestory.io/api/SEA/220/mob/100004/render/move"
+             alt="Orange Mushroom" class="patrol-mob" id="mobSalmon">
+        <img src="https://maplestory.io/api/SEA/220/mob/3210200/render/move"
+             alt="Dill's Mob" class="patrol-mob" id="mobDill">
+        <div class="patrol-ground"></div>
+    </div>
+
+    <!-- ===== OUR STORY ===== -->
+    <section class="section section-alt">
+        <div class="section-inner">
+            <div class="section-label reveal">Our Story</div>
+            <h3 class="section-title reveal">How it all began</h3>
+            <div class="reveal">
+                <p>
+                    What started as two gamers crossing paths online slowly grew into something
+                    neither of us expected. Between late-night MapleStory sessions and long conversations
+                    that stretched past midnight, we found a connection that felt effortless and real.
+                </p>
+                <p>
+                    From our first awkward meetup to exploring hawker centres together, adopting
+                    way too many house plants, and navigating the chaos of BTO applications,
+                    every chapter has been better with the other person in it. We're excited to
+                    start the next one with all of you there.
+                </p>
+                <p style="color: var(--text-muted); font-size: 0.82rem; font-style: italic; margin-top: 20px;">
+                    (Placeholder - we'll update this with the real version soon!)
+                </p>
+            </div>
+        </div>
     </section>
 
-    <!-- ===== INFO SECTIONS ===== -->
-    <div class="info-container">
-
-        <!-- OUR STORY -->
-        <section class="info-section" id="story">
-            <h3>Our Story</h3>
-            <p>
-                What started as two gamers crossing paths online slowly grew into something
-                neither of us expected. Between late-night MapleStory sessions and long conversations
-                that stretched past midnight, we found a connection that felt effortless and real.
-            </p>
-            <p>
-                From our first awkward meetup to exploring hawker centres together, adopting
-                way too many house plants, and navigating the chaos of BTO applications,
-                every chapter has been better with the other person in it. We're excited to
-                start the next one with all of you there.
-            </p>
-            <p style="color: #aaa; font-size: 0.85rem; font-style: italic; margin-top: 16px;">
-                (We'll update this with the real version soon. Stay tuned!)
-            </p>
-        </section>
-
-        <!-- GETTING THERE -->
-        <section class="info-section" id="getting-there">
-            <h3>Getting There</h3>
-            <p style="margin-bottom: 16px;">
-                <span class="highlight">Chui Huay Lim Club</span><br>
+    <!-- ===== GETTING THERE ===== -->
+    <section class="section">
+        <div class="section-inner">
+            <div class="section-label reveal">Location</div>
+            <h3 class="section-title reveal">Getting There</h3>
+            <p class="reveal" style="margin-bottom: 20px;">
+                <strong style="color: var(--text);">Chui Huay Lim Club</strong><br>
                 190 Keng Lee Road, Singapore 308409
             </p>
 
-            <div class="transport-grid">
-                <span class="icon">&#x1F687;</span>
-                <span><span class="highlight">MRT:</span> Newton Station (NS21/DT11), Exit C. Walk straight along Keng Lee Road, about 5 minutes.</span>
-
-                <span class="icon">&#x1F68C;</span>
-                <span><span class="highlight">Bus:</span> Alight at Newton Life Church (Stop 40129). Services 5, 54, 124, 143, 162, 167. Take the path behind the bus stop, turn left.</span>
-
-                <span class="icon">&#x1F697;</span>
-                <span><span class="highlight">Driving:</span> Underground carpark available at Chui Huay Lim Club.</span>
+            <div class="transport-card reveal">
+                <div class="t-icon">&#x1F687;</div>
+                <div class="t-label">By MRT</div>
+                <p>Newton Station (NS21 / DT11). Take <strong>Exit C</strong> and walk straight along Keng Lee Road. About 5 minutes.</p>
+            </div>
+            <div class="transport-card reveal">
+                <div class="t-icon">&#x1F68C;</div>
+                <div class="t-label">By Bus</div>
+                <p>Alight at Newton Life Church (Stop 40129). Bus services 5, 54, 124, 143, 162, 167. Take the path behind the bus stop, turn left.</p>
+            </div>
+            <div class="transport-card reveal">
+                <div class="t-icon">&#x1F697;</div>
+                <div class="t-label">By Car</div>
+                <p>Underground carpark available at Chui Huay Lim Club.</p>
             </div>
 
-            <p style="margin-top: 16px;">
-                <a href="https://maps.google.com/?q=Chui+Huay+Lim+Club+190+Keng+Lee+Road+Singapore" target="_blank">Open in Google Maps &#x2197;</a>
-            </p>
-        </section>
+            <div class="reveal">
+                <a href="https://maps.google.com/?q=Chui+Huay+Lim+Club+190+Keng+Lee+Road+Singapore" target="_blank" class="maps-link">
+                    Open in Google Maps &#x2197;
+                </a>
+            </div>
+        </div>
+    </section>
 
-        <!-- THE FOOD -->
-        <section class="info-section" id="food">
-            <h3>The Food</h3>
-            <p>
-                Dinner will be a Chinese banquet prepared by <span class="highlight">Chui Huay Lim Teochew Cuisine</span>,
-                a dining concept by JUMBO Group. Known for their refined Teochew cooking since 2011,
-                expect a multi-course feast featuring fresh seafood, traditional favourites, and
-                a few indulgent surprises.
-            </p>
-            <p>
-                If you have specific dietary requirements or allergies, please let us know in
-                the RSVP form above and we'll do our best to accommodate you.
-            </p>
-        </section>
+    <!-- ===== THE FOOD ===== -->
+    <section class="section section-alt">
+        <div class="section-inner">
+            <div class="section-label reveal">Dinner</div>
+            <h3 class="section-title reveal">The Food</h3>
+            <div class="reveal">
+                <p>
+                    Dinner will be a Chinese banquet prepared by <strong style="color: var(--text);">Chui Huay Lim Teochew Cuisine</strong>,
+                    a dining concept by JUMBO Group. Known for their refined Teochew cooking since 2011,
+                    expect a multi-course feast featuring fresh seafood, traditional favourites, and
+                    a few indulgent surprises.
+                </p>
+                <p>
+                    If you have specific dietary requirements or allergies, please let us know in
+                    the RSVP form above and we'll do our best to accommodate you.
+                </p>
+            </div>
+        </div>
+    </section>
 
-        <!-- DRESS CODE -->
-        <section class="info-section" id="dress-code">
-            <h3>Dress Code</h3>
-            <p>
-                <span class="highlight">Smart Casual.</span>
-                Come looking sharp but comfortable. Think collared shirts, blouses,
-                or that outfit you feel great in. No need for suits or gowns unless you
-                want to!
-            </p>
-        </section>
+    <!-- ===== DRESS CODE ===== -->
+    <section class="section">
+        <div class="section-inner" style="text-align: center;">
+            <div class="section-label reveal">Attire</div>
+            <h3 class="section-title reveal">Dress Code</h3>
+            <div class="reveal">
+                <div class="dress-badge">Smart Casual</div>
+                <p style="max-width: 380px; margin: 0 auto;">
+                    Come looking sharp but comfortable. Think collared shirts, blouses,
+                    or that outfit you feel great in. No need for suits or gowns unless you want to!
+                </p>
+            </div>
+        </div>
+    </section>
 
-        <!-- CONTACT -->
-        <section class="info-section" id="contact">
-            <h3>Questions?</h3>
-            <p style="margin-bottom: 16px;">Feel free to reach out to either of us.</p>
+    <!-- ===== CONTACT ===== -->
+    <section class="section section-alt">
+        <div class="section-inner">
+            <div class="section-label reveal">Questions?</div>
+            <h3 class="section-title reveal">Get in Touch</h3>
+            <p class="reveal">Feel free to reach out to either of us if you need anything.</p>
             <div class="contact-grid">
-                <div class="contact-card">
-                    <div class="name">Salmon</div>
-                    <div class="role">Groom</div>
+                <div class="contact-card reveal from-left">
+                    <div class="c-name">Salmon</div>
+                    <div class="c-role">Groom</div>
                     <a href="tel:+65XXXXXXXX">+65 XXXX XXXX</a>
                 </div>
-                <div class="contact-card">
-                    <div class="name">Dill</div>
-                    <div class="role">Bride</div>
+                <div class="contact-card reveal from-right">
+                    <div class="c-name">Dill</div>
+                    <div class="c-role">Bride</div>
                     <a href="tel:+65XXXXXXXX">+65 XXXX XXXX</a>
                 </div>
             </div>
-        </section>
-
-    </div>
+        </div>
+    </section>
 
     <!-- ===== FOOTER ===== -->
     <footer class="footer">
@@ -484,13 +700,135 @@
         <p>We can't wait to celebrate with you</p>
     </footer>
 
-    <!-- ===== SCRIPT ===== -->
+    <!-- ===== SCRIPTS ===== -->
     <script>
+        // =============================================
+        // MUSHROOM RAIN
+        // =============================================
+        (function() {
+            const overlay = document.getElementById('rain-overlay');
+            const count = 25;
+            const sprites = [
+                'https://maplestory.io/api/SEA/220/mob/9833390/render/stand',
+                'https://maplestory.io/api/SEA/220/mob/100004/render/stand',
+                'https://maplestory.io/api/SEA/220/mob/3210200/render/stand'
+            ];
+
+            for (let i = 0; i < count; i++) {
+                const img = document.createElement('img');
+                img.src = sprites[Math.floor(Math.random() * sprites.length)];
+                img.className = 'rain-mushroom';
+
+                const size = 28 + Math.random() * 36;
+                const left = Math.random() * 100;
+                const delay = Math.random() * 2;
+                const duration = 2.5 + Math.random() * 2;
+                const sway = (Math.random() - 0.5) * 120;
+
+                img.style.cssText = `
+                    height: ${size}px;
+                    left: ${left}%;
+                    opacity: ${0.3 + Math.random() * 0.5};
+                    animation: mushroom-fall ${duration}s ease-in ${delay}s forwards;
+                    --sway: ${sway}px;
+                `;
+                overlay.appendChild(img);
+            }
+
+            // Add rain keyframes
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes mushroom-fall {
+                    0% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0; }
+                    10% { opacity: 0.7; }
+                    100% { transform: translateY(110vh) translateX(var(--sway)) rotate(${Math.random() > 0.5 ? '' : '-'}180deg); opacity: 0; }
+                }
+            `;
+            document.head.appendChild(style);
+
+            // Fade out and remove
+            setTimeout(() => overlay.classList.add('fade-out'), 4000);
+            setTimeout(() => overlay.remove(), 5200);
+        })();
+
+        // =============================================
+        // MOB PATROL (MapleStory-style left/right walk)
+        // =============================================
+        (function() {
+            const section = document.querySelector('.mob-patrol-section');
+            const mobSalmon = document.getElementById('mobSalmon');
+            const mobDill = document.getElementById('mobDill');
+
+            function setupPatrol(mob, startPct, speed, facingRight) {
+                let pos = startPct;
+                let direction = facingRight ? 1 : -1;
+                const step = speed;
+
+                function update() {
+                    const sectionW = section.offsetWidth;
+                    const mobW = mob.offsetHeight * 1.2; // approx width
+                    const minPct = 5;
+                    const maxPct = 95 - (mobW / sectionW * 100);
+
+                    pos += step * direction;
+
+                    if (pos >= maxPct) { direction = -1; }
+                    if (pos <= minPct) { direction = 1; }
+
+                    mob.style.left = pos + '%';
+                    // Flip sprite based on direction
+                    // MapleStory mobs face right by default in move sprite
+                    mob.style.transform = direction === -1 ? 'scaleX(-1)' : 'scaleX(1)';
+
+                    requestAnimationFrame(update);
+                }
+                mob.style.left = pos + '%';
+                update();
+            }
+
+            // Salmon's mushroom: starts left, moves right
+            setupPatrol(mobSalmon, 10, 0.06, true);
+            // Dill's mob: starts right, moves left
+            setupPatrol(mobDill, 70, 0.05, false);
+        })();
+
+        // =============================================
+        // SCROLL REVEAL (Intersection Observer)
+        // =============================================
+        (function() {
+            const reveals = document.querySelectorAll('.reveal');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        // Stagger sibling reveals slightly
+                        const delay = entry.target.dataset.delay || 0;
+                        setTimeout(() => {
+                            entry.target.classList.add('visible');
+                        }, delay);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.15,
+                rootMargin: '0px 0px -40px 0px'
+            });
+
+            reveals.forEach((el, i) => {
+                // Add stagger delay to siblings within same parent
+                const siblings = el.parentElement.querySelectorAll('.reveal');
+                const sibIndex = Array.from(siblings).indexOf(el);
+                el.dataset.delay = sibIndex * 120;
+                observer.observe(el);
+            });
+        })();
+
+        // =============================================
+        // RSVP FORM SUBMISSION
+        // =============================================
         const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbysHx_sxaHpYGR4mODAgfqZm1h6QQ5QpSgfzeJzfWL9looaL-f1hJ5Zb31Z_Cd_nPEE/exec';
 
         document.getElementById('rsvpForm').addEventListener('submit', async (e) => {
             e.preventDefault();
-
             if (document.getElementById('website').value) return;
 
             const btn = document.getElementById('submitBtn');
