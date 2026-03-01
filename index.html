@@ -3,19 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wedding RSVP</title>
+    <title>Salmon & Dill's Wedding</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Georgia', serif;
             background: #ffffff;
             color: #333;
+            -webkit-font-smoothing: antialiased;
         }
 
         /* ===== HERO BANNER ===== */
         .hero {
             width: 100%;
-            padding: 60px 20px 48px;
+            padding: 56px 20px 44px;
             text-align: center;
             background: #fafafa;
             border-bottom: 1px solid #f0f0f0;
@@ -24,7 +25,7 @@
         }
         .hero-mushroom {
             position: absolute;
-            height: 60px;
+            height: 55px;
             opacity: 0.12;
             pointer-events: none;
         }
@@ -40,45 +41,46 @@
         }
         .hero h1 {
             font-weight: 400;
-            font-size: 2rem;
+            font-size: 1.9rem;
             color: #2c2c2c;
             letter-spacing: 0.02em;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
         .hero .names {
-            font-size: 1.1rem;
-            color: #666;
-            letter-spacing: 0.12em;
+            font-size: 1.05rem;
+            color: #555;
+            letter-spacing: 0.14em;
             text-transform: uppercase;
-            margin-bottom: 6px;
+            margin-bottom: 16px;
         }
-        .hero .date {
-            font-size: 0.9rem;
-            color: #aaa;
-            letter-spacing: 0.08em;
+        .hero .details {
+            font-size: 0.88rem;
+            color: #888;
+            letter-spacing: 0.06em;
+            line-height: 1.7;
         }
         .hero .ornament {
             display: inline-block;
-            width: 40px;
+            width: 36px;
             height: 1px;
             background: #ccc;
             vertical-align: middle;
-            margin: 0 12px;
+            margin: 0 10px;
         }
-        .hero .date-line {
-            margin-top: 12px;
+        .hero .details-line {
+            margin-top: 4px;
         }
 
         /* ===== FORM SECTION ===== */
         .form-section {
             max-width: 480px;
             margin: 0 auto;
-            padding: 40px 24px;
+            padding: 40px 24px 32px;
         }
         .form-section h2 {
             text-align: center;
             font-weight: 400;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             color: #999;
             letter-spacing: 0.06em;
             margin-bottom: 32px;
@@ -108,19 +110,14 @@
             outline: none;
             border-bottom-color: #333;
         }
-        input::placeholder, textarea::placeholder {
-            color: #ccc;
-        }
+        input::placeholder, textarea::placeholder { color: #ccc; }
         select {
             -webkit-appearance: none;
             -moz-appearance: none;
             appearance: none;
             cursor: pointer;
         }
-        textarea {
-            resize: vertical;
-            min-height: 48px;
-        }
+        textarea { resize: vertical; min-height: 48px; }
         button {
             width: 100%;
             padding: 14px;
@@ -138,9 +135,7 @@
         }
         button:hover { background: #444; }
         button:disabled { background: #ccc; cursor: not-allowed; }
-
         .hp { position: absolute; left: -9999px; }
-
         #status {
             text-align: center;
             margin-top: 20px;
@@ -149,46 +144,154 @@
         .success { color: #4a7c59; }
         .error { color: #c0392b; }
 
+        /* ===== MORE INFO CTA ===== */
+        .cta-section {
+            text-align: center;
+            padding: 32px 20px 36px;
+            background: #fafafa;
+            border-top: 1px solid #f0f0f0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .cta-mushroom {
+            height: 64px;
+            object-fit: contain;
+            margin-bottom: 12px;
+            animation: run 1.8s ease-in-out infinite;
+        }
+        @keyframes run {
+            0%, 100% { transform: translateX(0) translateY(0); }
+            25% { transform: translateX(6px) translateY(-4px); }
+            50% { transform: translateX(0) translateY(0); }
+            75% { transform: translateX(-6px) translateY(-4px); }
+        }
+        .cta-section p {
+            font-size: 1rem;
+            color: #666;
+            letter-spacing: 0.04em;
+        }
+        .cta-section a {
+            color: #e67e22;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .scroll-arrow {
+            display: inline-block;
+            margin-top: 8px;
+            font-size: 1.2rem;
+            color: #ccc;
+            animation: bounce-down 1.5s ease-in-out infinite;
+        }
+        @keyframes bounce-down {
+            0%, 100% { transform: translateY(0); opacity: 0.5; }
+            50% { transform: translateY(6px); opacity: 1; }
+        }
+
+        /* ===== INFO SECTIONS ===== */
+        .info-container {
+            max-width: 560px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        .info-section {
+            padding: 36px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .info-section:last-child {
+            border-bottom: none;
+        }
+        .info-section h3 {
+            font-weight: 400;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: #aaa;
+            margin-bottom: 16px;
+        }
+        .info-section p {
+            font-size: 0.95rem;
+            line-height: 1.75;
+            color: #555;
+        }
+        .info-section p + p {
+            margin-top: 12px;
+        }
+        .info-section .highlight {
+            color: #333;
+            font-weight: 600;
+        }
+        .info-section a {
+            color: #e67e22;
+            text-decoration: none;
+        }
+        .info-section a:hover {
+            text-decoration: underline;
+        }
+        .transport-grid {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 8px 16px;
+            font-size: 0.92rem;
+            line-height: 1.6;
+            color: #555;
+        }
+        .transport-grid .icon {
+            font-size: 1.1rem;
+            text-align: center;
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 8px;
+        }
+        .contact-card {
+            padding: 16px;
+            background: #fafafa;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .contact-card .name {
+            font-size: 0.95rem;
+            color: #333;
+            margin-bottom: 4px;
+        }
+        .contact-card .role {
+            font-size: 0.75rem;
+            color: #aaa;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 8px;
+        }
+        .contact-card a {
+            font-size: 0.85rem;
+        }
+
         /* ===== FOOTER ===== */
         .footer {
             text-align: center;
-            padding: 40px 20px 48px;
+            padding: 36px 20px 44px;
             background: #fafafa;
             border-top: 1px solid #f0f0f0;
-            position: relative;
         }
         .footer-mushrooms {
             display: flex;
             justify-content: center;
             align-items: flex-end;
-            gap: 24px;
-            margin-bottom: 20px;
+            gap: 20px;
+            margin-bottom: 16px;
         }
         .footer-mushrooms img {
-            height: 56px;
+            height: 48px;
             object-fit: contain;
-            opacity: 0.25;
+            opacity: 0.2;
         }
-        .footer-mushrooms img:nth-child(1) {
-            animation: bob 2.5s ease-in-out infinite;
-        }
-        .footer-mushrooms img:nth-child(2) {
-            height: 40px;
-            opacity: 0.15;
-            animation: bob 3s ease-in-out infinite 0.3s;
-        }
-        .footer-mushrooms img:nth-child(3) {
-            animation: bob-flip 2.5s ease-in-out infinite 0.6s;
-        }
+        .footer-mushrooms img:nth-child(1) { animation: bob 2.5s ease-in-out infinite; }
+        .footer-mushrooms img:nth-child(2) { height: 36px; opacity: 0.12; animation: bob 3s ease-in-out infinite 0.3s; }
+        .footer-mushrooms img:nth-child(3) { animation: bob-flip 2.5s ease-in-out infinite 0.6s; }
         .footer p {
             font-size: 0.8rem;
             color: #bbb;
             letter-spacing: 0.06em;
-        }
-        .footer .venue {
-            font-size: 0.85rem;
-            color: #999;
-            margin-bottom: 4px;
         }
 
         /* ===== ANIMATIONS ===== */
@@ -203,13 +306,16 @@
 
         /* ===== MOBILE ===== */
         @media (max-width: 520px) {
-            .hero { padding: 48px 16px 40px; }
-            .hero h1 { font-size: 1.6rem; }
-            .hero .names { font-size: 0.95rem; }
+            .hero { padding: 44px 16px 36px; }
+            .hero h1 { font-size: 1.5rem; }
+            .hero .names { font-size: 0.9rem; }
             .hero-mushroom { height: 40px; }
-            .form-section { padding: 32px 20px; }
-            .footer-mushrooms img { height: 44px; }
-            .footer-mushrooms img:nth-child(2) { height: 32px; }
+            .form-section { padding: 32px 20px 24px; }
+            .info-container { padding: 0 20px; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .footer-mushrooms img { height: 40px; }
+            .footer-mushrooms img:nth-child(2) { height: 28px; }
+            .cta-mushroom { height: 52px; }
         }
     </style>
 </head>
@@ -220,13 +326,14 @@
         <img src="https://maplestory.io/api/SEA/220/mob/100004/render/stand" alt="" class="hero-mushroom left">
         <img src="https://maplestory.io/api/SEA/220/mob/100004/render/stand" alt="" class="hero-mushroom right">
 
-        <h1>You're Invited</h1>
-        <p class="names">Salmon & Dill</p>
-        <div class="date-line">
+        <h1>You're Cordially Invited!</h1>
+        <p class="names">Salmon & Dill's Wedding</p>
+        <div class="details">
             <span class="ornament"></span>
-            <span class="date">6 December 2026</span>
+            <span>6 December 2026 &middot; 6:00 PM</span>
             <span class="ornament"></span>
         </div>
+        <div class="details details-line">Chui Huay Lim Club</div>
     </header>
 
     <!-- ===== RSVP FORM ===== -->
@@ -268,6 +375,105 @@
         <div id="status"></div>
     </section>
 
+    <!-- ===== MORE INFO CTA ===== -->
+    <section class="cta-section" id="cta">
+        <img src="https://maplestory.io/api/SEA/220/mob/100004/render/move" alt="" class="cta-mushroom">
+        <p>Scroll down for more details!</p>
+        <span class="scroll-arrow">&#x25BE;</span>
+    </section>
+
+    <!-- ===== INFO SECTIONS ===== -->
+    <div class="info-container">
+
+        <!-- OUR STORY -->
+        <section class="info-section" id="story">
+            <h3>Our Story</h3>
+            <p>
+                What started as two gamers crossing paths online slowly grew into something
+                neither of us expected. Between late-night MapleStory sessions and long conversations
+                that stretched past midnight, we found a connection that felt effortless and real.
+            </p>
+            <p>
+                From our first awkward meetup to exploring hawker centres together, adopting
+                way too many house plants, and navigating the chaos of BTO applications,
+                every chapter has been better with the other person in it. We're excited to
+                start the next one with all of you there.
+            </p>
+            <p style="color: #aaa; font-size: 0.85rem; font-style: italic; margin-top: 16px;">
+                (We'll update this with the real version soon. Stay tuned!)
+            </p>
+        </section>
+
+        <!-- GETTING THERE -->
+        <section class="info-section" id="getting-there">
+            <h3>Getting There</h3>
+            <p style="margin-bottom: 16px;">
+                <span class="highlight">Chui Huay Lim Club</span><br>
+                190 Keng Lee Road, Singapore 308409
+            </p>
+
+            <div class="transport-grid">
+                <span class="icon">&#x1F687;</span>
+                <span><span class="highlight">MRT:</span> Newton Station (NS21/DT11), Exit C. Walk straight along Keng Lee Road, about 5 minutes.</span>
+
+                <span class="icon">&#x1F68C;</span>
+                <span><span class="highlight">Bus:</span> Alight at Newton Life Church (Stop 40129). Services 5, 54, 124, 143, 162, 167. Take the path behind the bus stop, turn left.</span>
+
+                <span class="icon">&#x1F697;</span>
+                <span><span class="highlight">Driving:</span> Underground carpark available at Chui Huay Lim Club.</span>
+            </div>
+
+            <p style="margin-top: 16px;">
+                <a href="https://maps.google.com/?q=Chui+Huay+Lim+Club+190+Keng+Lee+Road+Singapore" target="_blank">Open in Google Maps &#x2197;</a>
+            </p>
+        </section>
+
+        <!-- THE FOOD -->
+        <section class="info-section" id="food">
+            <h3>The Food</h3>
+            <p>
+                Dinner will be a Chinese banquet prepared by <span class="highlight">Chui Huay Lim Teochew Cuisine</span>,
+                a dining concept by JUMBO Group. Known for their refined Teochew cooking since 2011,
+                expect a multi-course feast featuring fresh seafood, traditional favourites, and
+                a few indulgent surprises.
+            </p>
+            <p>
+                If you have specific dietary requirements or allergies, please let us know in
+                the RSVP form above and we'll do our best to accommodate you.
+            </p>
+        </section>
+
+        <!-- DRESS CODE -->
+        <section class="info-section" id="dress-code">
+            <h3>Dress Code</h3>
+            <p>
+                <span class="highlight">Smart Casual.</span>
+                Come looking sharp but comfortable. Think collared shirts, blouses,
+                or that outfit you feel great in. No need for suits or gowns unless you
+                want to!
+            </p>
+        </section>
+
+        <!-- CONTACT -->
+        <section class="info-section" id="contact">
+            <h3>Questions?</h3>
+            <p style="margin-bottom: 16px;">Feel free to reach out to either of us.</p>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="name">Salmon</div>
+                    <div class="role">Groom</div>
+                    <a href="tel:+65XXXXXXXX">+65 XXXX XXXX</a>
+                </div>
+                <div class="contact-card">
+                    <div class="name">Dill</div>
+                    <div class="role">Bride</div>
+                    <a href="tel:+65XXXXXXXX">+65 XXXX XXXX</a>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
     <!-- ===== FOOTER ===== -->
     <footer class="footer">
         <div class="footer-mushrooms">
@@ -275,14 +481,11 @@
             <img src="https://maplestory.io/api/SEA/220/mob/9833390/render/stand" alt="">
             <img src="https://maplestory.io/api/SEA/220/mob/100004/render/stand" alt="">
         </div>
-        <p class="venue">Chui Huay Lim Club</p>
         <p>We can't wait to celebrate with you</p>
     </footer>
 
+    <!-- ===== SCRIPT ===== -->
     <script>
-        // =============================================
-        // CHANGE THIS to your Apps Script deployment URL
-        // =============================================
         const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbysHx_sxaHpYGR4mODAgfqZm1h6QQ5QpSgfzeJzfWL9looaL-f1hJ5Zb31Z_Cd_nPEE/exec';
 
         document.getElementById('rsvpForm').addEventListener('submit', async (e) => {
