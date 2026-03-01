@@ -425,6 +425,7 @@
         /* ===== RSVP FORM ===== */
         .form-section {
             background: var(--white);
+            padding-bottom: 24px;
         }
 
         .form-card {
@@ -1311,8 +1312,15 @@
                         setTimeout(() => {
                             entry.target.classList.add('visible');
                         }, delay);
+                        // Sections after RSVP: stay visible permanently
+                        if (!entry.target.closest('.form-section')) {
+                            observer.unobserve(entry.target);
+                        }
                     } else {
-                        entry.target.classList.remove('visible');
+                        // Only re-hide elements inside RSVP form section
+                        if (entry.target.closest('.form-section')) {
+                            entry.target.classList.remove('visible');
+                        }
                     }
                 });
             }, {
@@ -1346,7 +1354,7 @@
                     }
                 });
             }, {
-                threshold: 0.3
+                threshold: 0.7
             });
 
             observer.observe(card);
