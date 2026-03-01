@@ -323,26 +323,46 @@
 
         /* ===== MOB PATROL (below form) ===== */
         .mob-patrol-section {
-            height: 100px;
+            height: 160px;
             position: relative;
             overflow: hidden;
             background: var(--white);
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
+            gap: 4px;
         }
         .patrol-text {
             font-family: var(--serif);
-            font-size: 1.1rem;
+            font-size: 1.6rem;
             font-style: italic;
-            color: var(--text-muted);
+            color: var(--text-light);
             letter-spacing: 0.04em;
             z-index: 0;
             pointer-events: none;
         }
+        .patrol-hint {
+            font-family: var(--sans);
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            z-index: 0;
+        }
+        .scroll-arrow-down {
+            font-size: 1rem;
+            color: var(--accent-soft);
+            animation: bounce-down 1.5s ease-in-out infinite;
+            z-index: 0;
+        }
+        @keyframes bounce-down {
+            0%, 100% { transform: translateY(0); opacity: 0.4; }
+            50% { transform: translateY(5px); opacity: 1; }
+        }
         .patrol-mob {
             position: absolute;
-            bottom: 10px;
+            bottom: 16px;
             height: 64px;
             object-fit: contain;
             z-index: 1;
@@ -353,6 +373,80 @@
             left: 0; right: 0;
             height: 1px;
             background: var(--border);
+        }
+
+        /* ===== GIANT MUSHROOM TRANSITION ===== */
+        .giant-transition {
+            height: 180px;
+            position: relative;
+            overflow: hidden;
+            background: var(--warm-grey);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+        .giant-mushroom {
+            position: absolute;
+            height: 140px;
+            bottom: 20px;
+            left: -200px;
+            object-fit: contain;
+            filter: drop-shadow(0 8px 16px rgba(0,0,0,0.1));
+            opacity: 0;
+        }
+        .giant-mushroom.running {
+            animation: giant-run 2.5s ease-in-out forwards;
+        }
+        @keyframes giant-run {
+            0% { left: -200px; opacity: 0; transform: scaleX(-1); }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { left: calc(100% + 200px); opacity: 0; transform: scaleX(-1); }
+        }
+
+        /* ===== SECTION IMAGES ===== */
+        .section-image {
+            width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            margin: 24px 0;
+            position: relative;
+        }
+        .section-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .section-image.placeholder {
+            height: 200px;
+            background: var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px dashed #d5d0c8;
+        }
+        .section-image.placeholder span {
+            font-family: var(--sans);
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            letter-spacing: 0.06em;
+        }
+        .map-embed {
+            width: 100%;
+            height: 220px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin: 20px 0;
+        }
+
+        /* Our Story initially hidden, revealed by giant mushroom */
+        .story-section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .story-section.revealed {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         /* ===== TRANSPORT GRID ===== */
@@ -503,7 +597,12 @@
             .form-card { padding: 28px 20px; border-radius: 12px; }
             .contact-grid { grid-template-columns: 1fr; }
             .patrol-mob { height: 48px; }
-            .mob-patrol-section { height: 72px; }
+            .mob-patrol-section { height: 130px; }
+            .patrol-text { font-size: 1.3rem; }
+            .giant-transition { height: 140px; }
+            .giant-mushroom { height: 100px; }
+            .section-image.placeholder { height: 160px; }
+            .map-embed { height: 180px; }
         }
     </style>
 </head>
@@ -583,6 +682,7 @@
     <!-- ===== MOB PATROL ===== -->
     <div class="mob-patrol-section">
         <p class="patrol-text">Read on for more info!</p>
+        <span class="scroll-arrow-down">&#x25BE;</span>
         <img src="https://maplestory.io/api/SEA/220/mob/100004/render/move"
              alt="Orange Mushroom" class="patrol-mob" id="mobSalmon">
         <img src="https://maplestory.io/api/SEA/220/mob/3210200/render/move"
@@ -590,11 +690,20 @@
         <div class="patrol-ground"></div>
     </div>
 
+    <!-- ===== GIANT MUSHROOM TRANSITION ===== -->
+    <div class="giant-transition" id="giantTransition">
+        <img src="https://maplestory.io/api/SEA/220/mob/100004/render/move"
+             alt="" class="giant-mushroom" id="giantMushroom">
+    </div>
+
     <!-- ===== OUR STORY ===== -->
-    <section class="section section-alt">
+    <section class="section section-alt story-section" id="storySection">
         <div class="section-inner">
             <div class="section-label reveal">Our Story</div>
             <h3 class="section-title reveal">How it all began</h3>
+            <div class="section-image placeholder reveal">
+                <span>&#x1F4F7; &nbsp; Your couple photo here</span>
+            </div>
             <div class="reveal">
                 <p>
                     What started as two gamers crossing paths online slowly grew into something
@@ -608,7 +717,7 @@
                     start the next one with all of you there.
                 </p>
                 <p style="color: var(--text-muted); font-size: 0.82rem; font-style: italic; margin-top: 20px;">
-                    (Placeholder - we'll update this with the real version soon!)
+                    (Placeholder -- we'll update this with the real version soon!)
                 </p>
             </div>
         </div>
@@ -645,6 +754,13 @@
                     Open in Google Maps &#x2197;
                 </a>
             </div>
+
+            <div class="reveal">
+                <iframe class="map-embed"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.782!2d103.842!3d1.312!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da19c7a1f0b4f5%3A0x7e9f5a5e0f5b9b1a!2sChui%20Huay%20Lim%20Club!5e0!3m2!1sen!2ssg!4v1700000000000!5m2!1sen!2ssg"
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
         </div>
     </section>
 
@@ -660,6 +776,9 @@
                     expect a multi-course feast featuring fresh seafood, traditional favourites, and
                     a few indulgent surprises.
                 </p>
+                <div class="section-image placeholder" style="margin-top: 20px;">
+                    <span>&#x1F37D; &nbsp; Menu or food photo here</span>
+                </div>
                 <p>
                     If you have specific dietary requirements or allergies, please let us know in
                     the RSVP form above and we'll do our best to accommodate you.
@@ -833,6 +952,34 @@
                 el.dataset.delay = sibIndex * 120;
                 observer.observe(el);
             });
+        })();
+
+        // =============================================
+        // GIANT MUSHROOM TRANSITION
+        // =============================================
+        (function() {
+            const transition = document.getElementById('giantTransition');
+            const mushroom = document.getElementById('giantMushroom');
+            const story = document.getElementById('storySection');
+            let triggered = false;
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !triggered) {
+                        triggered = true;
+                        mushroom.classList.add('running');
+
+                        // Reveal Our Story after mushroom runs past
+                        mushroom.addEventListener('animationend', () => {
+                            story.classList.add('revealed');
+                        });
+
+                        observer.unobserve(transition);
+                    }
+                });
+            }, { threshold: 0.4 });
+
+            observer.observe(transition);
         })();
 
         // =============================================
