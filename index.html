@@ -327,12 +327,25 @@
             position: relative;
             overflow: hidden;
             background: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .patrol-text {
+            font-family: var(--serif);
+            font-size: 1.1rem;
+            font-style: italic;
+            color: var(--text-muted);
+            letter-spacing: 0.04em;
+            z-index: 0;
+            pointer-events: none;
         }
         .patrol-mob {
             position: absolute;
             bottom: 10px;
             height: 64px;
             object-fit: contain;
+            z-index: 1;
         }
         .patrol-ground {
             position: absolute;
@@ -569,6 +582,7 @@
 
     <!-- ===== MOB PATROL ===== -->
     <div class="mob-patrol-section">
+        <p class="patrol-text">Read on for more info!</p>
         <img src="https://maplestory.io/api/SEA/220/mob/100004/render/move"
              alt="Orange Mushroom" class="patrol-mob" id="mobSalmon">
         <img src="https://maplestory.io/api/SEA/220/mob/3210200/render/move"
@@ -776,9 +790,8 @@
                     if (pos <= minPct) { direction = 1; }
 
                     mob.style.left = pos + '%';
-                    // Flip sprite based on direction
-                    // MapleStory mobs face right by default in move sprite
-                    mob.style.transform = direction === -1 ? 'scaleX(-1)' : 'scaleX(1)';
+                    // Flip sprite: inverted from default so they face movement direction
+                    mob.style.transform = direction === 1 ? 'scaleX(-1)' : 'scaleX(1)';
 
                     requestAnimationFrame(update);
                 }
