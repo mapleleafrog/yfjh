@@ -1423,6 +1423,18 @@
             }
         }
 
+        @keyframes gentle-float-mobile {
+
+            0%,
+            100% {
+                transform: translateX(-50%) rotate(3deg) translateY(0);
+            }
+
+            50% {
+                transform: translateX(-50%) rotate(2deg) translateY(-6px);
+            }
+        }
+
         .letter-sticker-bottom {
             animation: gentle-float 4s ease-in-out infinite;
         }
@@ -1540,7 +1552,8 @@
 
             .letter-sticker-bottom {
                 left: 50% !important;
-                transform: translateX(-50%) rotate(3deg) !important;
+                animation: gentle-float-mobile 4s ease-in-out infinite !important;
+                transition: none !important;
             }
 
             .letter-sticker-bottom img {
@@ -1550,7 +1563,8 @@
             }
 
             .aboutus-wrapper.stickers-visible .letter-sticker-bottom {
-                transform: translateX(-50%) rotate(3deg) !important;
+                transform: none;
+                opacity: 1;
             }
 
             #mobDill {
