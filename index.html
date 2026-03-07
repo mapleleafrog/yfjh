@@ -1569,9 +1569,9 @@
             }
 
             .footer {
-                padding: 48px 20px 48px;
+                padding: 0;
                 position: relative;
-                height: auto;
+                height: 480px;
                 display: flex;
                 flex-direction: column;
                 justify-content: flex-end;
@@ -1580,34 +1580,42 @@
             }
 
             .footer-mushrooms {
-                position: relative;
-                top: auto;
-                left: auto;
-                right: auto;
-                bottom: auto;
-                margin-bottom: 24px;
-                display: flex;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                margin: 0;
+                display: block;
             }
 
             .footer-mushrooms img {
                 width: 100% !important;
-                height: auto !important;
-                border-radius: 8px;
+                height: 100% !important;
+                border-radius: 0;
                 object-fit: cover;
                 object-position: center 20%;
-                aspect-ratio: 16 / 9;
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+                aspect-ratio: auto;
+                box-shadow: none;
             }
 
             .footer-gradient {
-                display: none;
+                display: block;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 60%;
+                background: linear-gradient(to bottom, transparent, #111 85%, #111 100%);
+                z-index: 2;
+                pointer-events: none;
             }
 
             .footer-content {
                 position: relative;
                 z-index: 3;
                 background: transparent;
-                padding-bottom: 0px;
+                padding-bottom: 48px;
             }
         }
 
