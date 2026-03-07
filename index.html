@@ -4,7 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Salmon & Dill's Wedding</title>
+    <title>Jiahao & Yi Fang</title>
+
+    <!-- Link Preview (OG) Tags -->
+    <meta property="og:title" content="Jiahao & Yi Fang's Wedding">
+    <meta property="og:description" content="You're invited to our wedding! 🎉 Come celebrate with us — RSVP here!">
+    <meta property="og:image" content="https://maplestory.io/api/SEA/220/mob/100004/render/stand">
+    <meta property="og:type" content="website">
+    <meta name="description" content="Wedding RSVP for Jiahao & Yi Fang — 6 December 2026 at Chui Huay Lim Club">
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap');
 
@@ -38,6 +46,62 @@
             color: var(--text);
             -webkit-font-smoothing: antialiased;
             overflow-x: hidden;
+        }
+
+        /* ===== SCROLL PROGRESS BAR ===== */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            width: 0%;
+            background: linear-gradient(90deg, var(--accent-soft), var(--accent));
+            z-index: 9999;
+            transition: width 0.05s linear;
+        }
+
+        /* ===== NAV DOTS ===== */
+        .nav-dots {
+            position: fixed;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 200;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .nav-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--border);
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+            padding: 0;
+        }
+
+        .nav-dot.active {
+            background: var(--accent);
+            transform: scale(1.3);
+        }
+
+        .nav-dot:hover {
+            background: var(--accent-soft);
+        }
+
+        @media (max-width: 600px) {
+            .nav-dots {
+                right: 8px;
+                gap: 8px;
+            }
+
+            .nav-dot {
+                width: 6px;
+                height: 6px;
+            }
         }
 
         /* ===== MUSHROOM RAIN OVERLAY ===== */
@@ -125,6 +189,66 @@
         .hero-content {
             position: relative;
             z-index: 2;
+            padding: 48px 56px;
+        }
+
+        /* Corner frame accents */
+        .hero-content::before,
+        .hero-content::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border-color: var(--accent-soft);
+            border-style: solid;
+            opacity: 0;
+            animation: hero-fade-in 1s ease 1.3s forwards;
+        }
+
+        .hero-content::before {
+            top: 0;
+            left: 0;
+            border-width: 1px 0 0 1px;
+        }
+
+        .hero-content::after {
+            bottom: 0;
+            right: 0;
+            border-width: 0 1px 1px 0;
+        }
+
+        /* Extra corners via wrapper */
+        .hero-corners {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+        }
+
+        .hero-corners::before,
+        .hero-corners::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border-color: var(--accent-soft);
+            border-style: solid;
+            opacity: 0;
+            animation: hero-fade-in 1s ease 1.3s forwards;
+        }
+
+        .hero-corners::before {
+            top: 0;
+            right: 0;
+            border-width: 1px 1px 0 0;
+        }
+
+        .hero-corners::after {
+            bottom: 0;
+            left: 0;
+            border-width: 0 0 1px 1px;
         }
 
         .hero-label {
@@ -157,6 +281,19 @@
             font-style: italic;
             color: var(--accent);
             font-weight: 300;
+        }
+
+        .hero-nickname {
+            font-family: var(--serif);
+            font-size: 1.1rem;
+            font-weight: 300;
+            font-style: italic;
+            color: var(--text-muted);
+            letter-spacing: 0.08em;
+            margin-top: 4px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: hero-fade-in 1s ease 0.85s forwards;
         }
 
         .hero-divider {
@@ -290,6 +427,38 @@
             background: var(--warm-grey);
         }
 
+        /* ===== SECTION DIVIDERS ===== */
+        .section-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 0;
+            margin: 0;
+            opacity: 0;
+            transform: scaleX(0.3);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .section-divider.visible {
+            opacity: 1;
+            transform: scaleX(1);
+        }
+
+        .section-divider .divider-line {
+            width: 60px;
+            height: 1px;
+            background: var(--accent-soft);
+        }
+
+        .section-divider .divider-diamond {
+            width: 6px;
+            height: 6px;
+            background: var(--accent-soft);
+            transform: rotate(45deg);
+            flex-shrink: 0;
+        }
+
         .section-label {
             font-family: var(--sans);
             font-size: 0.8rem;
@@ -324,6 +493,80 @@
         .aboutus-wrapper {
             position: relative;
             padding: 80px 24px;
+        }
+
+        /* ===== LETTER STICKERS ===== */
+        .letter-sticker {
+            position: absolute;
+            pointer-events: none;
+            filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.2));
+            z-index: 12;
+            opacity: 0;
+            transform: scale(0.7);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .letter-sticker img {
+            display: block;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1.5px solid rgba(255, 255, 255, 0.95);
+            border-radius: 4px;
+            padding: 3px;
+        }
+
+        /* Staggered delays for each sticker */
+        .aboutus-wrapper.stickers-visible .letter-sticker {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .aboutus-wrapper.stickers-visible .letter-sticker:nth-child(1) {
+            transition-delay: 0.2s;
+        }
+
+        .aboutus-wrapper.stickers-visible .letter-sticker:nth-child(2) {
+            transition-delay: 0.5s;
+        }
+
+        .aboutus-wrapper.stickers-visible .letter-sticker:nth-child(3) {
+            transition-delay: 0.8s;
+        }
+
+        .aboutus-wrapper.stickers-visible .letter-sticker:nth-child(4) {
+            transition-delay: 1.1s;
+        }
+
+        .aboutus-wrapper.stickers-visible .letter-sticker:nth-child(5) {
+            transition-delay: 1.4s;
+        }
+
+        .aboutus-wrapper.stickers-visible .letter-sticker:nth-child(6) {
+            transition-delay: 1.7s;
+        }
+
+        /* Reset delays on hide so they disappear quickly */
+        .letter-sticker:nth-child(1) {
+            transition-delay: 0.15s;
+        }
+
+        .letter-sticker:nth-child(2) {
+            transition-delay: 0.12s;
+        }
+
+        .letter-sticker:nth-child(3) {
+            transition-delay: 0.09s;
+        }
+
+        .letter-sticker:nth-child(4) {
+            transition-delay: 0.06s;
+        }
+
+        .letter-sticker:nth-child(5) {
+            transition-delay: 0.03s;
+        }
+
+        .letter-sticker:nth-child(6) {
+            transition-delay: 0s;
         }
 
         .aboutus-dimmer {
@@ -486,12 +729,49 @@
         textarea:focus {
             outline: none;
             border-bottom-color: var(--accent);
+            box-shadow: 0 2px 8px rgba(212, 149, 106, 0.15);
         }
 
         input::placeholder,
         textarea::placeholder {
             color: #d0d0d0;
             font-weight: 300;
+        }
+
+        /* ===== FLOATING LABELS ===== */
+        .field-group {
+            position: relative;
+            margin-bottom: 22px;
+        }
+
+        .field-group label {
+            position: absolute;
+            top: 12px;
+            left: 0;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 300;
+            text-transform: none;
+            letter-spacing: 0;
+            pointer-events: none;
+            transition: all 0.25s ease;
+        }
+
+        .field-group input,
+        .field-group textarea {
+            margin-bottom: 0;
+        }
+
+        .field-group input:focus~label,
+        .field-group input:not(:placeholder-shown)~label,
+        .field-group textarea:focus~label,
+        .field-group textarea:not(:placeholder-shown)~label {
+            top: -10px;
+            font-size: 0.65rem;
+            font-weight: 500;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
         }
 
         select {
@@ -529,6 +809,11 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         }
 
+        .submit-btn:active {
+            transform: translateY(1px) scale(0.98);
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+        }
+
         .submit-btn:disabled {
             background: #ccc;
             cursor: not-allowed;
@@ -553,6 +838,156 @@
 
         .error {
             color: #c0392b;
+        }
+
+        /* ===== NUMBER STEPPER ===== */
+        .stepper-wrap {
+            display: flex;
+            align-items: center;
+            gap: 0;
+            margin-bottom: 22px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 10px;
+        }
+
+        .stepper-btn {
+            width: 36px;
+            height: 36px;
+            border: 1px solid var(--border);
+            background: var(--off-white);
+            color: var(--text);
+            font-size: 1.2rem;
+            font-family: var(--sans);
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: border-color 0.2s, background 0.2s;
+            user-select: none;
+            flex-shrink: 0;
+        }
+
+        .stepper-btn:hover {
+            border-color: var(--accent);
+            background: var(--warm-grey);
+        }
+
+        .stepper-btn:active {
+            background: var(--accent-soft);
+        }
+
+        .stepper-value {
+            min-width: 44px;
+            text-align: center;
+            font-family: var(--sans);
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: var(--text);
+        }
+
+        /* ===== PHONE ROW ===== */
+        .phone-row {
+            display: flex;
+            align-items: flex-end;
+            gap: 8px;
+            margin-bottom: 22px;
+        }
+
+        .phone-row select {
+            width: 80px;
+            flex-shrink: 0;
+            margin-bottom: 0;
+            padding: 12px 0;
+            font-size: 0.9rem;
+        }
+
+        .phone-row input {
+            flex: 1;
+            margin-bottom: 0;
+        }
+
+        /* ===== CONFIRMATION MODAL ===== */
+        .confirm-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .confirm-overlay.active {
+            display: flex;
+        }
+
+        .confirm-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 32px 28px;
+            max-width: 400px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            text-align: center;
+        }
+
+        .confirm-card h3 {
+            font-family: var(--serif);
+            font-weight: 300;
+            font-size: 1.4rem;
+            color: var(--text);
+            margin-bottom: 20px;
+        }
+
+        .confirm-details {
+            text-align: left;
+            font-family: var(--sans);
+            font-size: 0.88rem;
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 24px;
+            padding: 16px;
+            background: var(--off-white);
+            border-radius: 8px;
+        }
+
+        .confirm-details strong {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .confirm-actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        .confirm-actions button {
+            flex: 1;
+            padding: 12px;
+            border-radius: 8px;
+            font-family: var(--sans);
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.06em;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+
+        .btn-back {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--text-light);
+        }
+
+        .btn-confirm {
+            background: var(--text);
+            border: none;
+            color: white;
         }
 
         /* ===== MOB PATROL (below form) ===== */
@@ -609,11 +1044,17 @@
         }
 
         .patrol-mob {
-            position: absolute;
+            position: fixed;
             bottom: 16px;
             height: 64px;
             object-fit: contain;
-            z-index: 1;
+            z-index: 100;
+            pointer-events: none;
+        }
+
+        #mobDill {
+            height: 100px;
+            bottom: -8px;
         }
 
         .patrol-ground {
@@ -835,6 +1276,56 @@
             margin-bottom: 16px;
         }
 
+        /* ===== SCRAPBOOK PHOTO ===== */
+        .location-header {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 20px;
+        }
+
+        .scrapbook-photo {
+            flex-shrink: 0;
+            width: 180px;
+            background: white;
+            padding: 6px 6px 12px 6px;
+            border-radius: 2px;
+            box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.15), 0 1px 3px rgba(0, 0, 0, 0.1);
+            transform: rotate(3deg);
+            transition: transform 0.3s ease;
+        }
+
+        .scrapbook-photo:hover {
+            transform: rotate(0deg) scale(1.02);
+        }
+
+        .scrapbook-photo img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .scrapbook-photo .photo-caption {
+            font-family: var(--serif);
+            font-size: 0.7rem;
+            font-style: italic;
+            color: var(--text-muted);
+            text-align: center;
+            margin-top: 6px;
+        }
+
+        @media (max-width: 600px) {
+            .scrapbook-photo {
+                width: 130px;
+                padding: 4px 4px 14px 4px;
+            }
+
+            .scrapbook-photo img {
+                height: 100px;
+            }
+        }
+
         /* ===== FOOTER ===== */
         .footer {
             text-align: center;
@@ -879,6 +1370,22 @@
             font-weight: 300;
         }
 
+        .footer-couple {
+            font-family: var(--serif);
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 12px;
+            letter-spacing: 0.08em;
+        }
+
+        .footer-heart {
+            display: inline-block;
+            color: var(--accent-soft);
+            margin: 0 6px;
+            font-style: normal;
+        }
+
         /* ===== ANIMATIONS ===== */
         @keyframes bob {
 
@@ -902,6 +1409,22 @@
             50% {
                 transform: scaleX(-1) translateY(-6px);
             }
+        }
+
+        @keyframes gentle-float {
+
+            0%,
+            100% {
+                transform: rotate(3deg) translateY(0);
+            }
+
+            50% {
+                transform: rotate(2deg) translateY(-6px);
+            }
+        }
+
+        .letter-sticker-bottom {
+            animation: gentle-float 4s ease-in-out infinite;
         }
 
         /* ===== MOBILE ===== */
@@ -974,25 +1497,107 @@
             .aboutus-card p {
                 font-size: 0.95rem;
             }
+
+            .letter-sticker-bg {
+                position: relative !important;
+                top: auto !important;
+                left: auto !important;
+                right: auto !important;
+                transform: rotate(-2deg) !important;
+                width: fit-content;
+                display: block;
+                margin: -65px auto -10px;
+                z-index: 10 !important;
+            }
+
+            .aboutus-wrapper.stickers-visible .letter-sticker-bg {
+                transform: rotate(-2deg) !important;
+            }
+
+            .letter-sticker-bg img {
+                height: 100px !important;
+                width: 140px !important;
+            }
+
+            .aboutus-card .letter-sticker:not(.letter-sticker-bg):not(.letter-sticker-bottom) img {
+                height: 70px !important;
+                width: 55px !important;
+            }
+
+            .aboutus-card .letter-sticker:first-of-type {
+                left: -10px !important;
+                top: -25px !important;
+            }
+
+            .aboutus-card .letter-sticker:nth-of-type(2) {
+                right: -10px !important;
+                top: -25px !important;
+            }
+
+            .letter-sticker img {
+                padding: 2px;
+            }
+
+            .letter-sticker-bottom {
+                left: 50% !important;
+                transform: translateX(-50%) rotate(3deg) !important;
+            }
+
+            .letter-sticker-bottom img {
+                height: 110px !important;
+                width: 180px !important;
+                object-fit: cover !important;
+            }
+
+            .aboutus-wrapper.stickers-visible .letter-sticker-bottom {
+                transform: translateX(-50%) rotate(3deg) !important;
+            }
+
+            #mobDill {
+                height: 72px;
+            }
+        }
+
+        /* Safe zone for patrol mobs on mobile */
+        @media (max-width: 600px) {
+            body {
+                padding-bottom: 70px;
+            }
         }
     </style>
 </head>
 
 <body>
 
+    <!-- ===== SCROLL PROGRESS BAR ===== -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- ===== NAV DOTS ===== -->
+    <nav class="nav-dots" id="navDots">
+        <button class="nav-dot active" data-section="heroSection" title="Home"></button>
+        <button class="nav-dot" data-section="aboutSection" title="About Us"></button>
+        <button class="nav-dot" data-section="rsvpSection" title="RSVP"></button>
+        <button class="nav-dot" data-section="locationSection" title="Location"></button>
+        <button class="nav-dot" data-section="foodSection" title="Food"></button>
+        <button class="nav-dot" data-section="dressSection" title="Dress Code"></button>
+        <button class="nav-dot" data-section="contactSection" title="Contact"></button>
+    </nav>
+
     <!-- ===== MUSHROOM RAIN ===== -->
     <div id="rain-overlay"></div>
 
     <!-- ===== HERO ===== -->
-    <header class="hero">
+    <header class="hero" id="heroSection">
         <img src="https://maplestory.io/api/SEA/220/mob/100004/render/stand" alt="" class="hero-mushroom-bg pos1">
         <img src="https://maplestory.io/api/SEA/220/mob/100004/render/stand" alt="" class="hero-mushroom-bg pos2">
-        <img src="https://maplestory.io/api/SEA/220/mob/8880708/render/stand" alt="" class="hero-mushroom-bg pos3">
-        <img src="https://maplestory.io/api/SEA/220/mob/8880708/render/stand" alt="" class="hero-mushroom-bg pos4">
+        <img src="https://maplestory.io/api/SEA/220/mob/100006/render/stand" alt="" class="hero-mushroom-bg pos3">
+        <img src="https://maplestory.io/api/SEA/220/mob/100006/render/stand" alt="" class="hero-mushroom-bg pos4">
 
         <div class="hero-content">
+            <div class="hero-corners"></div>
             <div class="hero-label">You're Cordially Invited</div>
-            <h1>Salmon <span class="ampersand">&</span> Dill</h1>
+            <h1>Jiahao <span class="ampersand">&</span> Yi Fang</h1>
+            <div class="hero-nickname">Salmon & Dill</div>
             <div class="hero-divider"></div>
             <div class="details">
                 6 December 2026 &middot; 6:00 PM<br>
@@ -1008,14 +1613,29 @@
 
     <!-- ===== ABOUT US CARD ===== -->
     <div class="aboutus-dimmer" id="aboutusDimmer"></div>
-    <div class="aboutus-wrapper">
+    <div class="aboutus-wrapper" id="aboutSection">
+
+        <!-- Teaching photo behind the letter -->
+        <div class="letter-sticker letter-sticker-bg"
+            style="top: -30px; left: 50%; transform: translateX(-50%) rotate(-2deg); z-index: 11;">
+            <img src="../wedding/yfjh_teaching.png" alt="Teaching together"
+                style="height: 140px; width: 160px; object-fit: cover; object-position: center 25%;">
+        </div>
+
         <div class="aboutus-card" id="aboutusCard">
+            <!-- Side photos on the letter -->
+            <div class="letter-sticker" style="top: -50px; left: -50px; transform: rotate(-6deg); z-index: 12;">
+                <img src="../wedding/jh_hero.jpg" alt="Jiahao" style="height: 120px; width: 95px; object-fit: cover;">
+            </div>
+            <div class="letter-sticker" style="top: -50px; right: -50px; transform: rotate(5deg); z-index: 12;">
+                <img src="../wedding/yf_hero.png" alt="Yi Fang" style="height: 120px; width: 95px; object-fit: cover;">
+            </div>
             <div class="aboutus-label">About Us</div>
             <h3>Our Little Story</h3>
             <div style="display:flex; justify-content:center; gap:24px; margin-bottom:20px;">
                 <img src="https://maplestory.io/api/SEA/220/mob/100004/render/stand" alt="Salmon"
-                    style="height:56px; opacity:0.8;">
-                <img src="https://maplestory.io/api/SEA/220/mob/8880708/render/stand" alt="Dill"
+                    style="height:56px; opacity:0.8; transform:scaleX(-1);">
+                <img src="https://maplestory.io/api/SEA/220/mob/100006/render/stand" alt="Dill"
                     style="height:56px; opacity:0.8;">
             </div>
             <p>
@@ -1025,14 +1645,21 @@
                 to salmon and dill!
             </p>
             <p>
-                We're so excited to start the next one, and we'd love for you to be there.
+                We're so excited to start the next chapter, and we'd love for you to be there.
             </p>
             <div class="aboutus-signature">yfjh</div>
+
+            <!-- Bottom-left landscape photo -->
+            <div class="letter-sticker letter-sticker-bottom"
+                style="bottom: -55px; left: 25%; transform: rotate(3deg); z-index: 12;">
+                <img src="../wedding/yfjh_belowletterimage.png" alt="Us"
+                    style="height: 130px; width: 200px; object-fit: cover;">
+            </div>
         </div>
     </div>
 
     <!-- ===== RSVP ===== -->
-    <section class="section form-section">
+    <section class="section form-section" id="rsvpSection">
         <div class="section-inner">
             <div class="reveal">
                 <div class="section-label" style="text-align:center;">RSVP</div>
@@ -1042,14 +1669,24 @@
                 <p class="form-sub">Please respond by 15 November 2026</p>
 
                 <form id="rsvpForm">
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" required>
+                    <div class="field-group">
+                        <input type="text" id="name" required placeholder=" ">
+                        <label for="name">Full Name</label>
+                    </div>
 
-                    <label for="email">Email</label>
-                    <input type="email" id="email" required>
+                    <div class="field-group">
+                        <input type="email" id="email" required placeholder=" ">
+                        <label for="email">Email</label>
+                    </div>
 
                     <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" placeholder="e.g. 9123 4567">
+                    <div class="phone-row">
+                        <select id="countryCode">
+                            <option value="+65">+65</option>
+                            <option value="+60">+60</option>
+                        </select>
+                        <input type="tel" id="phone" placeholder="e.g. 9123 4567" pattern="[0-9 ]+" inputmode="numeric">
+                    </div>
 
                     <label for="attending">Will you be attending?</label>
                     <select id="attending" required>
@@ -1058,11 +1695,18 @@
                         <option value="No">Sorry, can't make it</option>
                     </select>
 
-                    <label for="plusone">How many other guests are joining you?</label>
-                    <input type="text" id="plusone">
+                    <label>How many other guests are joining you?</label>
+                    <div class="stepper-wrap">
+                        <button type="button" class="stepper-btn" id="stepperMinus">−</button>
+                        <div class="stepper-value" id="stepperValue">0</div>
+                        <button type="button" class="stepper-btn" id="stepperPlus">+</button>
+                    </div>
+                    <input type="hidden" id="plusone" value="0">
 
-                    <label for="dietary">Dietary requirements</label>
-                    <textarea id="dietary" placeholder="e.g. Vegetarian, no nuts..."></textarea>
+                    <div class="field-group">
+                        <textarea id="dietary" placeholder=" "></textarea>
+                        <label for="dietary">Dietary requirements</label>
+                    </div>
 
                     <div class="hp">
                         <label for="website">Website</label>
@@ -1080,12 +1724,14 @@
     <div class="mob-patrol-section">
         <p class="patrol-text">Read on for more info!</p>
         <span class="scroll-arrow-down">&#x25BE;</span>
-        <img src="https://maplestory.io/api/SEA/220/mob/100004/render/move" alt="Orange Mushroom" class="patrol-mob"
-            id="mobSalmon">
-        <img src="https://maplestory.io/api/SEA/220/mob/8880708/render/move" alt="Dill's Mob" class="patrol-mob"
-            id="mobDill">
         <div class="patrol-ground"></div>
     </div>
+
+    <!-- ===== FIXED PATROL MOBS (bottom of screen) ===== -->
+    <img src="https://maplestory.io/api/SEA/220/mob/100004/render/move" alt="Orange Mushroom" class="patrol-mob"
+        id="mobSalmon">
+    <img src="https://maplestory.io/api/SEA/220/mob/100006/render/move" alt="Dill's Mob" class="patrol-mob"
+        id="mobDill">
 
     <!-- ===== GIANT MUSHROOM TRANSITION ===== -->
     <div class="giant-transition" id="giantTransition">
@@ -1096,20 +1742,28 @@
 
 
     <!-- ===== GETTING THERE ===== -->
-    <section class="section">
+    <section class="section" id="locationSection">
         <div class="section-inner reveal">
             <div class="section-label">Location</div>
-            <h3 class="section-title">Getting There</h3>
-            <p style="margin-bottom: 20px;">
-                <strong style="color: var(--text);">Chui Huay Lim Club</strong><br>
-                190 Keng Lee Road, Singapore 308409
-            </p>
+            <div class="location-header">
+                <div class="location-header-text">
+                    <h3 class="section-title">Getting There</h3>
+                    <p>
+                        <strong style="color: var(--text);">Chui Huay Lim Club</strong><br>
+                        190 Keng Lee Road, Singapore 308409
+                    </p>
+                </div>
+                <div class="scrapbook-photo">
+                    <img src="../wedding/yfjh_chlclub.jpg" alt="Chui Huay Lim Club">
+                    <div class="photo-caption">We will be here!</div>
+                </div>
+            </div>
 
             <div class="transport-card">
                 <div class="t-icon">&#x1F687;</div>
                 <div class="t-label">By MRT</div>
                 <p>Newton Station (NS21 / DT11). Take <strong>Exit C</strong> and walk straight along Keng Lee Road.
-                    About 5 minutes.</p>
+                    About 10 minutes (Route shown below).</p>
             </div>
             <div class="transport-card">
                 <div class="t-icon">&#x1F68C;</div>
@@ -1124,23 +1778,39 @@
             </div>
 
             <div>
-                <a href="https://maps.google.com/?q=Chui+Huay+Lim+Club+190+Keng+Lee+Road+Singapore" target="_blank"
-                    class="maps-link">
+                <a href="https://maps.app.goo.gl/j2WBrmuEDTssrMaE7" target="_blank" class="maps-link">
                     Open in Google Maps &#x2197;
                 </a>
             </div>
 
             <div>
                 <iframe class="map-embed"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.782!2d103.842!3d1.312!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da19c7a1f0b4f5%3A0x7e9f5a5e0f5b9b1a!2sChui%20Huay%20Lim%20Club!5e0!3m2!1sen!2ssg!4v1700000000000!5m2!1sen!2ssg"
+                    src="https://www.google.com/maps?q=Chui+Huay+Lim+Club,+190+Keng+Lee+Road,+Singapore+308409&output=embed"
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+
+            <p
+                style="margin-top: 28px; margin-bottom: 8px; font-weight: 500; color: var(--text); font-size: 0.85rem; letter-spacing: 0.06em;">
+                🚶 Walking Route from Newton MRT
+            </p>
+            <div>
+                <iframe class="map-embed" style="height: 450px;"
+                    src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d2248.876953890445!2d103.83835825649277!3d1.3133311496671818!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e3!4m5!1s0x31da19f42e586e73%3A0x2f6e6417b8a66cb3!2sNewton%20MRT%20Station%20(NS21)%2C%2049%20Scotts%20Rd%2C%20Singapore%20228234!3m2!1d1.31245!2d103.83799119999999!4m5!1s0x31da19cd1e433ad7%3A0x80ba99c4c4baef6e!2sChui%20Huay%20Lim%20Club%2C%20190%20Keng%20Lee%20Rd%2C%20%2304-01%2C%20Singapore%20308409!3m2!1d1.3139039!2d103.8414652!5e1!3m2!1sen!2ssg!4v1772862313176!5m2!1sen!2ssg"
                     allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
             </div>
         </div>
     </section>
 
+    <div class="section-divider">
+        <div class="divider-line"></div>
+        <div class="divider-diamond"></div>
+        <div class="divider-line"></div>
+    </div>
+
     <!-- ===== THE FOOD ===== -->
-    <section class="section section-alt">
+    <section class="section section-alt" id="foodSection">
         <div class="section-inner reveal">
             <div class="section-label">Dinner</div>
             <h3 class="section-title">The Food</h3>
@@ -1152,9 +1822,14 @@
                     expect a multi-course feast featuring fresh seafood, traditional favourites, and
                     a few indulgent surprises.
                 </p>
-                <div class="section-image placeholder" style="margin-top: 20px;">
-                    <span>&#x1F37D; &nbsp; Menu or food photo here</span>
+                <div class="section-image" style="margin-top: 20px;">
+                    <img src="https://live.staticflickr.com/1912/43049082310_f058181130_h.jpg" alt="Food preview"
+                        style="width:100%; border-radius:12px;">
                 </div>
+                <p
+                    style="font-size: 0.78rem; font-style: italic; color: var(--text-muted); text-align: center; margin-top: 8px;">
+                    visualization purposes only!! we are still deciding on food
+                </p>
                 <p>
                     If you have specific dietary requirements or allergies, please let us know in
                     the RSVP form above and we'll do our best to accommodate you.
@@ -1163,8 +1838,14 @@
         </div>
     </section>
 
+    <div class="section-divider">
+        <div class="divider-line"></div>
+        <div class="divider-diamond"></div>
+        <div class="divider-line"></div>
+    </div>
+
     <!-- ===== DRESS CODE ===== -->
-    <section class="section">
+    <section class="section" id="dressSection">
         <div class="section-inner reveal" style="text-align: center;">
             <div class="section-label">Attire</div>
             <h3 class="section-title">Dress Code</h3>
@@ -1178,8 +1859,14 @@
         </div>
     </section>
 
+    <div class="section-divider">
+        <div class="divider-line"></div>
+        <div class="divider-diamond"></div>
+        <div class="divider-line"></div>
+    </div>
+
     <!-- ===== CONTACT ===== -->
-    <section class="section section-alt">
+    <section class="section section-alt" id="contactSection">
         <div class="section-inner reveal">
             <div class="section-label">Questions?</div>
             <h3 class="section-title">Get in Touch</h3>
@@ -1188,12 +1875,12 @@
                 <div class="contact-card">
                     <div class="c-name">Salmon</div>
                     <div class="c-role">Groom</div>
-                    <a href="tel:+65XXXXXXXX">+65 XXXX XXXX</a>
+                    <a href="tel:+6591862352">+65 9186 2352</a>
                 </div>
                 <div class="contact-card">
                     <div class="c-name">Dill</div>
                     <div class="c-role">Bride</div>
-                    <a href="tel:+65XXXXXXXX">+65 XXXX XXXX</a>
+                    <a href="tel:+6591333869">+65 9133 3869</a>
                 </div>
             </div>
         </div>
@@ -1207,10 +1894,91 @@
             <img src="https://maplestory.io/api/SEA/220/mob/100004/render/stand" alt="">
         </div>
         <p>We can't wait to celebrate with you</p>
+        <div class="footer-couple">Jiahao <span class="footer-heart">♥</span> Yi Fang</div>
     </footer>
 
-    <!-- ===== SCRIPTS ===== -->
+    <!-- ===== CONFIRMATION MODAL ===== -->
+    <div class="confirm-overlay" id="confirmOverlay">
+        <div class="confirm-card">
+            <h3>Confirm your RSVP</h3>
+            <div class="confirm-details" id="confirmDetails"></div>
+            <div class="confirm-actions">
+                <button class="btn-back" id="confirmBack">Go Back</button>
+                <button class="btn-confirm" id="confirmSubmit">Confirm & Send</button>
+            </div>
+        </div>
+    </div>
+
     <script>
+        // =============================================
+        // SCROLL PROGRESS BAR
+        // =============================================
+        const progressBar = document.getElementById('scrollProgress');
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = (scrollTop / docHeight) * 100;
+            progressBar.style.width = progress + '%';
+        });
+
+        // =============================================
+        // NAV DOTS (section tracking + click to scroll)
+        // =============================================
+        (function () {
+            const dots = document.querySelectorAll('.nav-dot');
+            const sectionIds = Array.from(dots).map(d => d.dataset.section);
+            const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
+
+            // Click to scroll
+            dots.forEach(dot => {
+                dot.addEventListener('click', () => {
+                    const target = document.getElementById(dot.dataset.section);
+                    if (target) target.scrollIntoView({ behavior: 'smooth' });
+                });
+            });
+
+            // Track active section
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.id;
+                        dots.forEach(d => d.classList.toggle('active', d.dataset.section === id));
+                    }
+                });
+            }, { threshold: 0.3 });
+
+            sections.forEach(s => observer.observe(s));
+        })();
+
+        // =============================================
+        // HERO PARALLAX (subtle mushroom drift)
+        // =============================================
+        (function () {
+            const mushrooms = document.querySelectorAll('.hero-mushroom-bg');
+            window.addEventListener('scroll', () => {
+                const scrollY = window.scrollY;
+                mushrooms.forEach((m, i) => {
+                    const speed = 0.15 + (i * 0.05);
+                    m.style.transform = m.style.transform.replace(/translateY\([^)]*\)/, '') +
+                        ` translateY(${scrollY * speed}px)`;
+                });
+            }, { passive: true });
+        })();
+
+        // =============================================
+        // DIVIDER REVEAL (animate on scroll)
+        // =============================================
+        (function () {
+            const dividers = document.querySelectorAll('.section-divider');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.5 });
+            dividers.forEach(d => observer.observe(d));
+        })();
         // =============================================
         // MUSHROOM RAIN
         // =============================================
@@ -1220,7 +1988,7 @@
             const sprites = [
                 'https://maplestory.io/api/SEA/220/mob/9833390/render/stand',
                 'https://maplestory.io/api/SEA/220/mob/100004/render/stand',
-                'https://maplestory.io/api/SEA/220/mob/8880708/render/stand'
+                'https://maplestory.io/api/SEA/220/mob/100006/render/stand'
             ];
 
             for (let i = 0; i < count; i++) {
@@ -1264,7 +2032,6 @@
         // MOB PATROL (MapleStory-style left/right walk)
         // =============================================
         (function () {
-            const section = document.querySelector('.mob-patrol-section');
             const mobSalmon = document.getElementById('mobSalmon');
             const mobDill = document.getElementById('mobDill');
 
@@ -1274,10 +2041,10 @@
                 const step = speed;
 
                 function update() {
-                    const sectionW = section.offsetWidth;
-                    const mobW = mob.offsetHeight * 1.2; // approx width
-                    const minPct = 5;
-                    const maxPct = 95 - (mobW / sectionW * 100);
+                    const screenW = window.innerWidth;
+                    const mobW = mob.offsetHeight * 1.2;
+                    const minPct = 2;
+                    const maxPct = 98 - (mobW / screenW * 100);
 
                     pos += step * direction;
 
@@ -1285,7 +2052,6 @@
                     if (pos <= minPct) { direction = 1; }
 
                     mob.style.left = pos + '%';
-                    // Flip sprite: inverted from default so they face movement direction
                     mob.style.transform = direction === 1 ? 'scaleX(-1)' : 'scaleX(1)';
 
                     requestAnimationFrame(update);
@@ -1294,9 +2060,7 @@
                 update();
             }
 
-            // Salmon's mushroom: starts left, moves right
             setupPatrol(mobSalmon, 10, 0.06, true);
-            // Dill's mob: starts right, moves left
             setupPatrol(mobDill, 70, 0.05, false);
         })();
 
@@ -1342,15 +2106,18 @@
         (function () {
             const card = document.getElementById('aboutusCard');
             const dimmer = document.getElementById('aboutusDimmer');
+            const wrapper = card.closest('.aboutus-wrapper');
 
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         card.classList.add('visible');
                         dimmer.classList.add('active');
+                        wrapper.classList.add('stickers-visible');
                     } else {
                         card.classList.remove('visible');
                         dimmer.classList.remove('active');
+                        wrapper.classList.remove('stickers-visible');
                     }
                 });
             }, {
@@ -1382,13 +2149,78 @@
         })();
 
         // =============================================
-        // RSVP FORM SUBMISSION
+        // GUEST COUNT STEPPER
+        // =============================================
+        (function () {
+            const display = document.getElementById('stepperValue');
+            const hidden = document.getElementById('plusone');
+            const minus = document.getElementById('stepperMinus');
+            const plus = document.getElementById('stepperPlus');
+            let count = 0;
+
+            function update() {
+                display.textContent = count;
+                hidden.value = count;
+            }
+
+            minus.addEventListener('click', () => { if (count > 0) { count--; update(); } });
+            plus.addEventListener('click', () => { if (count < 9) { count++; update(); } });
+        })();
+
+        // =============================================
+        // PHONE VALIDATION
+        // =============================================
+        document.getElementById('phone').addEventListener('input', function () {
+            this.value = this.value.replace(/[^0-9 ]/g, '');
+        });
+
+        // =============================================
+        // RSVP FORM SUBMISSION (with confirmation)
         // =============================================
         const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbysHx_sxaHpYGR4mODAgfqZm1h6QQ5QpSgfzeJzfWL9looaL-f1hJ5Zb31Z_Cd_nPEE/exec';
 
-        document.getElementById('rsvpForm').addEventListener('submit', async (e) => {
+        let pendingPayload = null;
+
+        document.getElementById('rsvpForm').addEventListener('submit', (e) => {
             e.preventDefault();
             if (document.getElementById('website').value) return;
+
+            const countryCode = document.getElementById('countryCode').value;
+            const phoneRaw = document.getElementById('phone').value.trim();
+            const fullPhone = phoneRaw ? countryCode + ' ' + phoneRaw : '';
+
+            pendingPayload = {
+                name: document.getElementById('name').value.trim(),
+                email: document.getElementById('email').value.trim(),
+                phone: fullPhone,
+                attending: document.getElementById('attending').value,
+                plusone: document.getElementById('plusone').value,
+                dietary: document.getElementById('dietary').value.trim()
+            };
+
+            // Build confirmation summary
+            const details = document.getElementById('confirmDetails');
+            details.innerHTML = `
+                <strong>Name:</strong> ${pendingPayload.name}<br>
+                <strong>Email:</strong> ${pendingPayload.email}<br>
+                ${pendingPayload.phone ? `<strong>Phone:</strong> ${pendingPayload.phone}<br>` : ''}
+                <strong>Attending:</strong> ${pendingPayload.attending}<br>
+                <strong>Extra guests:</strong> ${pendingPayload.plusone}<br>
+                ${pendingPayload.dietary ? `<strong>Dietary:</strong> ${pendingPayload.dietary}` : ''}
+            `;
+
+            document.getElementById('confirmOverlay').classList.add('active');
+        });
+
+        // Go back
+        document.getElementById('confirmBack').addEventListener('click', () => {
+            document.getElementById('confirmOverlay').classList.remove('active');
+            pendingPayload = null;
+        });
+
+        // Confirm & send
+        document.getElementById('confirmSubmit').addEventListener('click', async () => {
+            document.getElementById('confirmOverlay').classList.remove('active');
 
             const btn = document.getElementById('submitBtn');
             const status = document.getElementById('status');
@@ -1397,29 +2229,22 @@
             btn.textContent = 'Submitting...';
             status.textContent = '';
 
-            const payload = {
-                name: document.getElementById('name').value.trim(),
-                email: document.getElementById('email').value.trim(),
-                phone: document.getElementById('phone').value.trim(),
-                attending: document.getElementById('attending').value,
-                plusone: document.getElementById('plusone').value.trim(),
-                dietary: document.getElementById('dietary').value.trim()
-            };
-
             try {
                 const res = await fetch(SCRIPT_URL, {
                     method: 'POST',
-                    body: JSON.stringify(payload)
+                    body: JSON.stringify(pendingPayload)
                 });
                 const data = await res.json();
 
                 if (data.status === 'success') {
                     status.className = 'success';
-                    status.textContent = 'Thank you! Your RSVP has been received.';
+                    status.textContent = 'Thank you! Your RSVP has been received. 🎉';
                     document.getElementById('rsvpForm').reset();
+                    document.getElementById('stepperValue').textContent = '0';
+                    document.getElementById('plusone').value = '0';
                 } else if (data.status === 'updated') {
                     status.className = 'success';
-                    status.textContent = 'Your RSVP has been updated.';
+                    status.textContent = 'Your RSVP has been updated. ✅';
                 } else {
                     throw new Error(data.message || 'Something went wrong');
                 }
@@ -1430,6 +2255,7 @@
             } finally {
                 btn.disabled = false;
                 btn.textContent = 'Submit RSVP';
+                pendingPayload = null;
             }
         });
     </script>
