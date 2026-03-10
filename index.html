@@ -1661,7 +1661,7 @@
             <div class="hero-nickname">Salmon & Dill</div>
             <div class="hero-divider"></div>
             <div class="details">
-                6 December 2026 &middot; 6:00 PM<br>
+                6 December 2026 &middot; 7:00 PM<br>
                 Chui Huay Lim Club
             </div>
         </div>
@@ -2261,7 +2261,8 @@
 
             // Build confirmation summary
             const details = document.getElementById('confirmDetails');
-            details.innerHTML = `
+
+            let html = `
                 <strong>Name:</strong> ${pendingPayload.name}<br>
                 <strong>Email:</strong> ${pendingPayload.email}<br>
                 ${pendingPayload.phone ? `<strong>Phone:</strong> ${pendingPayload.phone}<br>` : ''}
@@ -2269,6 +2270,12 @@
                 <strong>Extra guests:</strong> ${pendingPayload.plusone}<br>
                 ${pendingPayload.dietary ? `<strong>Dietary:</strong> ${pendingPayload.dietary}` : ''}
             `;
+
+            if (pendingPayload.attending === 'No') {
+                html += `<br><br><em style="color: var(--accent); font-weight: 500;">sad that you can't make it :(</em>`;
+            }
+
+            details.innerHTML = html;
 
             document.getElementById('confirmOverlay').classList.add('active');
         });
