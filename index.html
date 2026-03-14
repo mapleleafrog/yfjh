@@ -2256,7 +2256,7 @@
             pendingPayload = {
                 name: document.getElementById('name').value.trim(),
                 email: document.getElementById('email').value.trim(),
-                phone: fullPhone,
+                phone: fullPhone.replace('+', ''),
                 attending: document.getElementById('attending').value,
                 plusone: document.getElementById('plusone').value,
                 dietary: document.getElementById('dietary').value.trim()
