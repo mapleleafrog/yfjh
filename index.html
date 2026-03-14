@@ -2251,7 +2251,7 @@
 
             const countryCode = document.getElementById('countryCode').value;
             const phoneRaw = document.getElementById('phone').value.trim();
-            const fullPhone = phoneRaw ? countryCode + ' ' + phoneRaw : '';
+            const fullPhone = phoneRaw ? countryCode.replace('+', '') + ' ' + phoneRaw : '';
 
             pendingPayload = {
                 name: document.getElementById('name').value.trim(),
