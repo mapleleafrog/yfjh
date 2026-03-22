@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "4.0",
-    "lastUpdated": "2026-03-22T08:26:31.121Z"
+    "lastUpdated": "2026-03-22T13:04:29.246Z"
   },
   "couple": {
     "partner1": {
@@ -38,7 +38,7 @@
     "specialIdeas": [
       {
         "title": "Photobooth",
-        "description": "Guests view photos → select design → print or download via QR"
+        "description": "Guests view photos â select design â print or download via QR"
       },
       {
         "title": "Avatar Screen",
@@ -1182,8 +1182,8 @@
       ]
     },
     {
-      "name": "亚伯",
-      "table": "亚伯 + Lara",
+      "name": "äºä¼¯",
+      "table": "äºä¼¯ + Lara",
       "rsvp": "pending",
       "dietary": "",
       "contact": "",
@@ -1192,8 +1192,8 @@
       ]
     },
     {
-      "name": "亚伯",
-      "table": "亚伯 + Lara",
+      "name": "äºä¼¯",
+      "table": "äºä¼¯ + Lara",
       "rsvp": "pending",
       "dietary": "",
       "contact": "",
@@ -1203,7 +1203,7 @@
     },
     {
       "name": "Lara",
-      "table": "亚伯 + Lara",
+      "table": "äºä¼¯ + Lara",
       "rsvp": "pending",
       "dietary": "",
       "contact": "",
@@ -1213,7 +1213,7 @@
     },
     {
       "name": "-",
-      "table": "亚伯 + Lara",
+      "table": "äºä¼¯ + Lara",
       "rsvp": "pending",
       "dietary": "",
       "contact": "",
@@ -1223,7 +1223,7 @@
     },
     {
       "name": "-",
-      "table": "亚伯 + Lara",
+      "table": "äºä¼¯ + Lara",
       "rsvp": "pending",
       "dietary": "",
       "contact": "",
@@ -1233,7 +1233,7 @@
     },
     {
       "name": "-",
-      "table": "亚伯 + Lara",
+      "table": "äºä¼¯ + Lara",
       "rsvp": "pending",
       "dietary": "",
       "contact": "",
@@ -1243,7 +1243,7 @@
     },
     {
       "name": "-",
-      "table": "亚伯 + Lara",
+      "table": "äºä¼¯ + Lara",
       "rsvp": "pending",
       "dietary": "",
       "contact": "",
@@ -1252,8 +1252,8 @@
       ]
     },
     {
-      "name": "金龙",
-      "table": "金龙 + Ah Meng",
+      "name": "éé¾",
+      "table": "éé¾ + Ah Meng",
       "rsvp": "pending",
       "dietary": "",
       "contact": "",
@@ -1263,7 +1263,7 @@
     },
     {
       "name": "Ah Meng",
-      "table": "金龙 + Ah Meng",
+      "table": "éé¾ + Ah Meng",
       "rsvp": "pending",
       "dietary": "",
       "contact": "",
@@ -1273,7 +1273,7 @@
     },
     {
       "name": "-",
-      "table": "金龙 + Ah Meng",
+      "table": "éé¾ + Ah Meng",
       "rsvp": "pending",
       "dietary": "",
       "contact": "",
@@ -1283,7 +1283,7 @@
     },
     {
       "name": "-",
-      "table": "金龙 + Ah Meng",
+      "table": "éé¾ + Ah Meng",
       "rsvp": "pending",
       "dietary": "",
       "contact": "",
@@ -1293,7 +1293,7 @@
     },
     {
       "name": "-",
-      "table": "金龙 + Ah Meng",
+      "table": "éé¾ + Ah Meng",
       "rsvp": "pending",
       "dietary": "",
       "contact": "",
@@ -1303,7 +1303,7 @@
     },
     {
       "name": "-",
-      "table": "金龙 + Ah Meng",
+      "table": "éé¾ + Ah Meng",
       "rsvp": "pending",
       "dietary": "",
       "contact": "",
@@ -1313,7 +1313,7 @@
     },
     {
       "name": "-",
-      "table": "金龙 + Ah Meng",
+      "table": "éé¾ + Ah Meng",
       "rsvp": "pending",
       "dietary": "",
       "contact": "",
@@ -1323,7 +1323,7 @@
     },
     {
       "name": "-",
-      "table": "金龙 + Ah Meng",
+      "table": "éé¾ + Ah Meng",
       "rsvp": "pending",
       "dietary": "",
       "contact": "",
@@ -1622,8 +1622,8 @@
       ]
     },
     {
-      "name": "姨婆",
-      "table": "姨婆",
+      "name": "å§¨å©",
+      "table": "å§¨å©",
       "rsvp": "pending",
       "dietary": "",
       "contact": "",
@@ -1633,7 +1633,7 @@
     },
     {
       "name": "Person 2",
-      "table": "姨婆",
+      "table": "å§¨å©",
       "rsvp": "pending",
       "dietary": "",
       "contact": "",
@@ -1643,7 +1643,7 @@
     },
     {
       "name": "Person 3",
-      "table": "姨婆",
+      "table": "å§¨å©",
       "rsvp": "pending",
       "dietary": "",
       "contact": "",
@@ -1653,7 +1653,7 @@
     },
     {
       "name": "Person 4",
-      "table": "姨婆",
+      "table": "å§¨å©",
       "rsvp": "pending",
       "dietary": "",
       "contact": "",
@@ -1663,7 +1663,7 @@
     },
     {
       "name": "Person 5",
-      "table": "姨婆",
+      "table": "å§¨å©",
       "rsvp": "pending",
       "dietary": "",
       "contact": "",
@@ -2495,6 +2495,13 @@
         "caption": "possibly funclaw at our event?",
         "status": "idea",
         "added": "2026-03-22T08:26:31.121Z"
+      },
+      {
+        "type": "image",
+        "url": "https://pin.it/6Gi0ySZlk",
+        "caption": "",
+        "status": "idea",
+        "added": "2026-03-22T13:04:29.244Z"
       }
     ]
   },
@@ -2534,73 +2541,73 @@
     "notes": "",
     "items": [
       {
-        "name": "Dragon Phoenix Candles (龙凤烛)",
+        "name": "Dragon Phoenix Candles (é¾å¤ç)",
         "qty": "1 pair",
         "checked": false,
         "notes": ""
       },
       {
-        "name": "Dragon Phoenix Biscuits (龙凤饼)",
+        "name": "Dragon Phoenix Biscuits (é¾å¤é¥¼)",
         "qty": "2 boxes",
         "checked": false,
         "notes": ""
       },
       {
-        "name": "Roasted Pig (烧猪/烧肉)",
+        "name": "Roasted Pig (ç§çª/ç§è)",
         "qty": "1",
         "checked": false,
         "notes": "Can be half pig or whole"
       },
       {
-        "name": "Pig Leg (猪脚)",
+        "name": "Pig Leg (çªè)",
         "qty": "1",
         "checked": false,
         "notes": ""
       },
       {
-        "name": "Liquor / Wine (酒)",
+        "name": "Liquor / Wine (é)",
         "qty": "2-4 bottles",
         "checked": false,
         "notes": ""
       },
       {
-        "name": "Tea Leaves (茶叶)",
+        "name": "Tea Leaves (è¶å¶)",
         "qty": "1 set",
         "checked": false,
         "notes": "Symbolises loyalty"
       },
       {
-        "name": "Sesame Seeds / Peanuts (芝麻/花生)",
+        "name": "Sesame Seeds / Peanuts (èéº»/è±ç)",
         "qty": "1 pack each",
         "checked": false,
         "notes": "Fertility symbol"
       },
       {
-        "name": "Dried Longan & Red Dates (龙眼红枣)",
+        "name": "Dried Longan & Red Dates (é¾ç¼çº¢æ£)",
         "qty": "1 pack",
         "checked": false,
         "notes": "Sweet marriage"
       },
       {
-        "name": "Jewellery (金器/首饰)",
+        "name": "Jewellery (éå¨/é¦é¥°)",
         "qty": "TBD",
         "checked": false,
         "notes": "Necklace, bracelet, ring, earrings"
       },
       {
-        "name": "Betrothal Money / Pin Jin (聘金)",
+        "name": "Betrothal Money / Pin Jin (èé)",
         "qty": "TBD",
         "checked": false,
-        "notes": "Red packet — amount to discuss"
+        "notes": "Red packet â amount to discuss"
       },
       {
-        "name": "Red Packets (红包)",
+        "name": "Red Packets (çº¢å)",
         "qty": "Various",
         "checked": false,
         "notes": "For helpers, elders, etc."
       },
       {
-        "name": "Wedding Cakes (喜饼)",
+        "name": "Wedding Cakes (åé¥¼)",
         "qty": "TBD",
         "checked": false,
         "notes": "For bride to distribute"
