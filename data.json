@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "4.0",
-    "lastUpdated": "2026-03-22T08:23:51.894Z"
+    "lastUpdated": "2026-03-22T08:25:52.635Z"
   },
   "couple": {
     "partner1": {
@@ -2480,7 +2480,17 @@
       "bridalBooked": false
     }
   },
-  "inspiration": {},
+  "inspiration": {
+    "vibes": [
+      {
+        "type": "text",
+        "title": "Enjoyable, gamified",
+        "content": "a fun experience for our guests, able to play digitally also",
+        "status": "idea",
+        "added": "2026-03-22T08:25:52.634Z"
+      }
+    ]
+  },
   "events": {
     "sg_wedding": {
       "venue": "Chui Huay Lim Teochew Cuisine",
