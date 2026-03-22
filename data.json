@@ -1,0 +1,2584 @@
+{
+  "meta": {
+    "version": "4.0",
+    "lastUpdated": "2026-03-22T06:16:47.137Z"
+  },
+  "couple": {
+    "partner1": {
+      "name": "Jiahao",
+      "alias": "JH",
+      "company": "PlayPark Singapore"
+    },
+    "partner2": {
+      "name": "Yi Fang",
+      "alias": "Dill"
+    }
+  },
+  "overview": {
+    "targetDate": {
+      "range": "6th Dec 2026 or 20th Dec 2026",
+      "selected": "6dec",
+      "preferredDay": "Saturday",
+      "avoid": "Hungry Ghost Festival, Religious festivals, CNY proximity"
+    },
+    "budget": {
+      "total": 40000,
+      "currency": "SGD"
+    },
+    "guestCount": {
+      "target": 170,
+      "tables": 10
+    },
+    "priority": [
+      "Photo + Video",
+      "Attire",
+      "Decor",
+      "F&B"
+    ],
+    "specialIdeas": [
+      {
+        "title": "Photobooth",
+        "description": "Guests view photos → select design → print or download via QR"
+      },
+      {
+        "title": "Avatar Screen",
+        "description": "MapleStory digital screen where guests insert their avatar as unity activity (PlayPark collab)"
+      }
+    ]
+  },
+  "venues": [
+    {
+      "id": "v1",
+      "name": "Raffles Marina",
+      "selected": false,
+      "status": "rejected",
+      "pricePerTable": "1188-1288++",
+      "capacity": "100-150",
+      "pros": "Lighthouse photoshoot, waterfront view, same price lunch/dinner",
+      "cons": "Remote location, limited parking",
+      "notes": "",
+      "inclusions": "Decor, cake, sound system, door gifts, day-use room"
+    },
+    {
+      "id": "v1768119121359",
+      "name": "Hilltop Bukit Batok",
+      "selected": false,
+      "status": "rejected",
+      "pricePerTable": "1578",
+      "capacity": "80 to 100",
+      "pros": "food is tasty",
+      "cons": "Small area to work with",
+      "notes": "",
+      "inclusions": ""
+    },
+    {
+      "id": "v1768124136199",
+      "name": "Mount Faber Peak",
+      "selected": false,
+      "status": "rejected",
+      "pricePerTable": "1680",
+      "capacity": "Up to 200",
+      "pros": "View, Capacity",
+      "cons": "Harbourfont, not direct mrt",
+      "notes": "if can convert to rectangle for glasshouse\nif can change shuttle to cable car tix",
+      "inclusions": ""
+    },
+    {
+      "id": "v1768128025133",
+      "name": "One Farrer Hotel",
+      "selected": false,
+      "status": "rejected",
+      "pricePerTable": "",
+      "capacity": "",
+      "pros": "",
+      "cons": "",
+      "notes": "",
+      "inclusions": ""
+    },
+    {
+      "id": "v1769272817704",
+      "name": "1-Arden",
+      "selected": false,
+      "status": "considering",
+      "pricePerTable": "~$155 - 205++",
+      "capacity": "178",
+      "pros": "High DIY flexibility",
+      "cons": "",
+      "notes": "",
+      "inclusions": "Australian "
+    },
+    {
+      "id": "v1769945600148",
+      "name": "Jurong Lake Gardens - Japanese Gardens Guesthouse",
+      "selected": false,
+      "status": "rejected",
+      "pricePerTable": "Buffet Style",
+      "capacity": "500",
+      "pros": "Totally DIY, big space",
+      "cons": "Need to settle everything ourselves, not convenient from MRT",
+      "notes": "",
+      "inclusions": ""
+    },
+    {
+      "id": "v1772274501187",
+      "name": "Chin Huay Lim Club",
+      "selected": true,
+      "status": "booked",
+      "pricePerTable": "$1799 Per Table, 8 Course Meal",
+      "capacity": "200",
+      "pros": "Big Rectangle",
+      "cons": "Entrance space small",
+      "notes": "",
+      "inclusions": ""
+    }
+  ],
+  "timeline": [
+    {
+      "time": "10:00am",
+      "activity": "Bride + groom arrive, prep in day-use room"
+    },
+    {
+      "time": "11:00am",
+      "activity": "First look photos, lighthouse shoot"
+    },
+    {
+      "time": "12:00pm",
+      "activity": "Guest arriva for ROMl, photobooth + MapleStory screen"
+    },
+    {
+      "time": "12:30pm",
+      "activity": "ROM solemnisation (+$200++)"
+    },
+    {
+      "time": "1:00pm",
+      "activity": "Lunch banquet begins"
+    },
+    {
+      "time": "1:30pm",
+      "activity": "March-in, first course"
+    },
+    {
+      "time": "3:30pm",
+      "activity": "Wrap up, guests leave in daylight"
+    },
+    {
+      "time": "4:00pm",
+      "activity": "Couple photos during golden hour (if energy permits)"
+    }
+  ],
+  "decisions": [
+    {
+      "category": "Bands",
+      "item": "Wedding bands",
+      "decision": "Done"
+    },
+    {
+      "category": "Attire",
+      "item": "Bride gown",
+      "decision": "Rent - 2 looks"
+    },
+    {
+      "category": "Attire",
+      "item": "Groom suit",
+      "decision": "Rent - 2 looks"
+    },
+    {
+      "category": "Ceremony",
+      "item": "Vows",
+      "decision": "Standard"
+    },
+    {
+      "category": "Logistics",
+      "item": "Bridal car",
+      "decision": "Own car decorated"
+    },
+    {
+      "category": "Ceremony",
+      "item": "Gate crash",
+      "decision": "No - simple quiz only"
+    },
+    {
+      "category": "Ceremony",
+      "item": "1st Walk-in (serious)",
+      "decision": "find a serious song"
+    },
+    {
+      "category": "Ceremony",
+      "item": "2nd Walk-in (more fun mood)",
+      "decision": "Lovin by Mrs. GREEN APPLE"
+    },
+    {
+      "category": "Ceremony",
+      "item": "First dance",
+      "decision": "TBC - considering"
+    },
+    {
+      "category": "Photo/Video",
+      "item": "Instant prints",
+      "decision": "Yes"
+    },
+    {
+      "category": "Photo/Video",
+      "item": "Montage",
+      "decision": "Self-made / DIY"
+    },
+    {
+      "category": "Photo/Video",
+      "item": "Wedding album",
+      "decision": "Yes"
+    },
+    {
+      "category": "Decor",
+      "item": "Decor approach",
+      "decision": "Carousell / DIY"
+    },
+    {
+      "category": "Music",
+      "item": "Music source",
+      "decision": "Self-prepared (Spotify/YouTube/MP3)"
+    },
+    {
+      "category": "Stationery",
+      "item": "Guestbook",
+      "decision": "Digital"
+    },
+    {
+      "category": "Stationery",
+      "item": "Invitations",
+      "decision": "Digital"
+    }
+  ],
+  "checklist": {
+    "Vendors": [
+      {
+        "item": "Photographer - style preference?",
+        "answer": "",
+        "done": false
+      },
+      {
+        "item": "Videographer - separate or combo?",
+        "answer": "",
+        "done": false
+      },
+      {
+        "item": "Photobooth vendor sourced?",
+        "answer": "",
+        "done": false
+      },
+      {
+        "item": "MUA - how many sessions?",
+        "answer": "",
+        "done": false
+      }
+    ],
+    "Attire": [
+      {
+        "item": "Veil/bridal accessories - included or separate?",
+        "answer": "",
+        "done": false
+      },
+      {
+        "item": "Shoes - sorted?",
+        "answer": "",
+        "done": false
+      }
+    ],
+    "Ceremony": [
+      {
+        "item": "ROM solemniser - preference?",
+        "answer": "",
+        "done": false
+      },
+      {
+        "item": "ROM license filing - timeline?",
+        "answer": "",
+        "done": false
+      },
+      {
+        "item": "How many walk-ins?",
+        "answer": "",
+        "done": false
+      }
+    ],
+    "Logistics": [
+      {
+        "item": "Day-of coordinator - hire or friend?",
+        "answer": "",
+        "done": false
+      },
+      {
+        "item": "Angpao box - who's in charge?",
+        "answer": "",
+        "done": false
+      },
+      {
+        "item": "Rehearsal - doing one?",
+        "answer": "",
+        "done": false
+      }
+    ],
+    "Tech & AV": [
+      {
+        "item": "Projector/screen - confirm with venue?",
+        "answer": "",
+        "done": false
+      },
+      {
+        "item": "Sound system - AUX/Bluetooth check?",
+        "answer": "",
+        "done": false
+      }
+    ],
+    "Food": [
+      {
+        "item": "Halal meals - how many pax?",
+        "answer": "",
+        "done": false
+      },
+      {
+        "item": "Other dietary restrictions?",
+        "answer": "",
+        "done": false
+      },
+      {
+        "item": "Wedding cake - confirm in package?",
+        "answer": "",
+        "done": false
+      }
+    ],
+    "Decor": [
+      {
+        "item": "Theme/colours - confirmed direction?",
+        "answer": "",
+        "done": false
+      },
+      {
+        "item": "Seating chart - digital or printed?",
+        "answer": "",
+        "done": false
+      }
+    ],
+    "Roles": [
+      {
+        "item": "Best man - candidates?",
+        "answer": "",
+        "done": false
+      },
+      {
+        "item": "Maid of honour - candidates?",
+        "answer": "",
+        "done": false
+      },
+      {
+        "item": "Emcee - friend or hire?",
+        "answer": "",
+        "done": false
+      }
+    ]
+  },
+  "budget": {
+    "F&B": [
+      {
+        "name": "10 tables @ venue rate",
+        "lowEst": 14250,
+        "highEst": 15450,
+        "actual": null
+      },
+      {
+        "name": "ROM solemnisation add-on",
+        "lowEst": 240,
+        "highEst": 240,
+        "actual": null
+      },
+      {
+        "name": "Halal meals (if premium)",
+        "lowEst": 0,
+        "highEst": 300,
+        "actual": null
+      }
+    ],
+    "Vendors": [
+      {
+        "name": "Photographer",
+        "lowEst": 2000,
+        "highEst": 4000,
+        "actual": null
+      },
+      {
+        "name": "Videographer",
+        "lowEst": 1500,
+        "highEst": 3000,
+        "actual": null
+      },
+      {
+        "name": "Photobooth",
+        "lowEst": 500,
+        "highEst": 1200,
+        "actual": null
+      },
+      {
+        "name": "MUA",
+        "lowEst": 400,
+        "highEst": 1000,
+        "actual": null
+      }
+    ],
+    "Attire": [
+      {
+        "name": "Bride gown rental (2 looks)",
+        "lowEst": 1500,
+        "highEst": 3000,
+        "actual": null
+      },
+      {
+        "name": "Groom suit rental (2 looks)",
+        "lowEst": 500,
+        "highEst": 1200,
+        "actual": null
+      },
+      {
+        "name": "Accessories",
+        "lowEst": 100,
+        "highEst": 400,
+        "actual": null
+      },
+      {
+        "name": "Shoes (both)",
+        "lowEst": 150,
+        "highEst": 400,
+        "actual": null
+      }
+    ],
+    "Decor": [
+      {
+        "name": "DIY / Carousell decor",
+        "lowEst": 200,
+        "highEst": 600,
+        "actual": null
+      },
+      {
+        "name": "Table numbers + seating chart",
+        "lowEst": 50,
+        "highEst": 150,
+        "actual": null
+      },
+      {
+        "name": "Car decoration",
+        "lowEst": 50,
+        "highEst": 150,
+        "actual": null
+      }
+    ],
+    "Misc": [
+      {
+        "name": "Wedding album",
+        "lowEst": 500,
+        "highEst": 1500,
+        "actual": null
+      },
+      {
+        "name": "Red umbrella + small items",
+        "lowEst": 50,
+        "highEst": 100,
+        "actual": null
+      },
+      {
+        "name": "Angpao box",
+        "lowEst": 30,
+        "highEst": 80,
+        "actual": null
+      }
+    ]
+  },
+  "guests": [
+    {
+      "name": "jh",
+      "contact": "91862352",
+      "rsvp": "pending",
+      "dietary": "",
+      "table": "A Main VIP Table (direct fam)",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "yf",
+      "contact": "",
+      "rsvp": "yes",
+      "dietary": "",
+      "table": "A Main VIP Table (direct fam)",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "jh papa",
+      "contact": "",
+      "rsvp": "pending",
+      "dietary": "",
+      "table": "A Main VIP Table (direct fam)",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "jh mummy",
+      "contact": "",
+      "rsvp": "pending",
+      "dietary": "",
+      "table": "A Main VIP Table (direct fam)",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "jiaxin",
+      "contact": "",
+      "rsvp": "pending",
+      "dietary": "",
+      "table": "A Main VIP Table (direct fam)",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "jiayi",
+      "contact": "",
+      "rsvp": "pending",
+      "dietary": "",
+      "table": "A Main VIP Table (direct fam)",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "lin",
+      "contact": "",
+      "rsvp": "pending",
+      "dietary": "",
+      "table": "A Main VIP Table (direct fam)",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "yf papa",
+      "contact": "",
+      "rsvp": "pending",
+      "dietary": "",
+      "table": "A Main VIP Table (direct fam)",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "yf mama",
+      "contact": "",
+      "rsvp": "pending",
+      "dietary": "",
+      "table": "A Main VIP Table (direct fam)",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "yf ahma",
+      "contact": "",
+      "rsvp": "pending",
+      "dietary": "",
+      "table": "A Main VIP Table (direct fam)",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "ah mm",
+      "contact": "",
+      "rsvp": "pending",
+      "dietary": "",
+      "table": "Muar Table",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "ys",
+      "contact": "",
+      "rsvp": "pending",
+      "dietary": "",
+      "table": "Muar Table",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "ly",
+      "contact": "",
+      "rsvp": "pending",
+      "dietary": "",
+      "table": "Muar Table",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "zm",
+      "contact": "",
+      "rsvp": "pending",
+      "dietary": "",
+      "table": "Muar Table",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "ym",
+      "contact": "",
+      "rsvp": "pending",
+      "dietary": "",
+      "table": "Muar Table",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "ml",
+      "contact": "",
+      "rsvp": "pending",
+      "dietary": "",
+      "table": "Muar Table",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "mia",
+      "contact": "",
+      "rsvp": "pending",
+      "dietary": "",
+      "table": "Muar Table",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "evi",
+      "contact": "",
+      "rsvp": "pending",
+      "dietary": "",
+      "table": "Muar Table",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "sm",
+      "contact": "",
+      "rsvp": "pending",
+      "dietary": "",
+      "table": "Muar Table",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "jj",
+      "contact": "",
+      "rsvp": "pending",
+      "dietary": "",
+      "table": "Muar Table",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "da gu",
+      "contact": "",
+      "rsvp": "pending",
+      "dietary": "",
+      "table": "Muars in SG (dad)",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "dgz",
+      "contact": "",
+      "rsvp": "pending",
+      "dietary": "",
+      "table": "Muars in SG (dad)",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "er gu",
+      "contact": "",
+      "rsvp": "pending",
+      "dietary": "",
+      "table": "Muars in SG (dad)",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "py",
+      "contact": "",
+      "rsvp": "pending",
+      "dietary": "",
+      "table": "Muars in SG (dad)",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "py husband ",
+      "contact": "",
+      "rsvp": "pending",
+      "dietary": "",
+      "table": "Muars in SG (dad)",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "sy",
+      "contact": "",
+      "rsvp": "pending",
+      "dietary": "",
+      "table": "Muars in SG (dad)",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "jl",
+      "contact": "",
+      "rsvp": "pending",
+      "dietary": "",
+      "table": "Muars in SG (dad)",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "annabelle",
+      "contact": "",
+      "rsvp": "pending",
+      "dietary": "",
+      "table": "Muars in SG (dad)",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "kid 1",
+      "contact": "",
+      "rsvp": "pending",
+      "dietary": "",
+      "table": "Muars in SG (dad)",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "kid 2",
+      "contact": "",
+      "rsvp": "pending",
+      "dietary": "",
+      "table": "Muars in SG (dad)",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "jerry",
+      "contact": "",
+      "rsvp": "pending",
+      "dietary": "",
+      "table": "PlayPark",
+      "events": [
+        "sg_party"
+      ]
+    },
+    {
+      "name": "xavier",
+      "contact": "",
+      "rsvp": "pending",
+      "dietary": "",
+      "table": "PlayPark",
+      "events": [
+        "sg_party"
+      ]
+    },
+    {
+      "name": "ethan",
+      "contact": "",
+      "rsvp": "pending",
+      "dietary": "",
+      "table": "PlayPark",
+      "events": [
+        "sg_party"
+      ]
+    },
+    {
+      "name": "shauna",
+      "contact": "",
+      "rsvp": "pending",
+      "dietary": "",
+      "table": "PlayPark",
+      "events": [
+        "sg_party"
+      ]
+    },
+    {
+      "name": "shi qian",
+      "contact": "",
+      "rsvp": "pending",
+      "dietary": "",
+      "table": "PlayPark",
+      "events": [
+        "sg_party"
+      ]
+    },
+    {
+      "name": "steph",
+      "contact": "",
+      "rsvp": "pending",
+      "dietary": "",
+      "table": "PlayPark",
+      "events": [
+        "sg_party"
+      ]
+    },
+    {
+      "name": "serena",
+      "contact": "",
+      "rsvp": "pending",
+      "dietary": "",
+      "table": "PlayPark",
+      "events": [
+        "sg_party"
+      ]
+    },
+    {
+      "name": "dickson",
+      "contact": "",
+      "rsvp": "pending",
+      "dietary": "",
+      "table": "PlayPark",
+      "events": [
+        "sg_party"
+      ]
+    },
+    {
+      "name": "shawn",
+      "contact": "",
+      "rsvp": "pending",
+      "dietary": "",
+      "table": "PlayPark",
+      "events": [
+        "sg_party"
+      ]
+    },
+    {
+      "name": "jessica",
+      "contact": "",
+      "rsvp": "pending",
+      "dietary": "",
+      "table": "PlayPark",
+      "events": [
+        "sg_party"
+      ]
+    },
+    {
+      "name": "hannah",
+      "contact": "",
+      "rsvp": "pending",
+      "dietary": "",
+      "table": "YF Uni",
+      "events": [
+        "sg_party"
+      ]
+    },
+    {
+      "name": "hannah husband",
+      "contact": "",
+      "rsvp": "pending",
+      "dietary": "",
+      "table": "YF Uni",
+      "events": [
+        "sg_party"
+      ]
+    },
+    {
+      "name": "rose",
+      "contact": "",
+      "rsvp": "pending",
+      "dietary": "",
+      "table": "YF Uni",
+      "events": [
+        "sg_party"
+      ]
+    },
+    {
+      "name": "rose husband",
+      "contact": "",
+      "rsvp": "pending",
+      "dietary": "",
+      "table": "YF Uni",
+      "events": [
+        "sg_party"
+      ]
+    },
+    {
+      "name": "gabriel",
+      "contact": "",
+      "rsvp": "pending",
+      "dietary": "",
+      "table": "YF Uni",
+      "events": [
+        "sg_party"
+      ]
+    },
+    {
+      "name": "gabriel wife",
+      "contact": "",
+      "rsvp": "pending",
+      "dietary": "",
+      "table": "YF Uni",
+      "events": [
+        "sg_party"
+      ]
+    },
+    {
+      "name": "kk",
+      "contact": "",
+      "rsvp": "pending",
+      "dietary": "",
+      "table": "YF Uni",
+      "events": [
+        "sg_party"
+      ]
+    },
+    {
+      "name": "belinda",
+      "contact": "",
+      "rsvp": "pending",
+      "dietary": "",
+      "table": "YF Uni",
+      "events": [
+        "sg_party"
+      ]
+    },
+    {
+      "name": "xy",
+      "contact": "",
+      "rsvp": "pending",
+      "dietary": "",
+      "table": "YF Uni",
+      "events": [
+        "sg_party"
+      ]
+    },
+    {
+      "name": "amin",
+      "contact": "",
+      "rsvp": "pending",
+      "dietary": "",
+      "table": "YF School",
+      "events": [
+        "sg_party"
+      ]
+    },
+    {
+      "name": "brenda",
+      "contact": "",
+      "rsvp": "pending",
+      "dietary": "",
+      "table": "YF School",
+      "events": [
+        "sg_party"
+      ]
+    },
+    {
+      "name": "lyvia",
+      "contact": "",
+      "rsvp": "pending",
+      "dietary": "",
+      "table": "YF School",
+      "events": [
+        "sg_party"
+      ]
+    },
+    {
+      "name": "angie",
+      "contact": "",
+      "rsvp": "pending",
+      "dietary": "",
+      "table": "YF School",
+      "events": [
+        "sg_party"
+      ]
+    },
+    {
+      "name": "Jolyn",
+      "contact": "",
+      "rsvp": "pending",
+      "dietary": "",
+      "table": "YF School",
+      "events": [
+        "sg_party"
+      ]
+    },
+    {
+      "name": "Jee sang",
+      "contact": "",
+      "rsvp": "pending",
+      "dietary": "",
+      "table": "YF School",
+      "events": [
+        "sg_party"
+      ]
+    },
+    {
+      "name": "Ryan",
+      "contact": "",
+      "rsvp": "pending",
+      "dietary": "",
+      "table": "YF School",
+      "events": [
+        "sg_party"
+      ]
+    },
+    {
+      "name": "Atiqah",
+      "contact": "",
+      "rsvp": "pending",
+      "dietary": "",
+      "table": "YF School",
+      "events": [
+        "sg_party"
+      ]
+    },
+    {
+      "name": "Kia Ngee",
+      "contact": "",
+      "rsvp": "pending",
+      "dietary": "",
+      "table": "YF School",
+      "events": [
+        "sg_party"
+      ]
+    },
+    {
+      "name": "Annabel",
+      "contact": "",
+      "rsvp": "pending",
+      "dietary": "",
+      "table": "YF School",
+      "events": [
+        "sg_party"
+      ]
+    },
+    {
+      "name": "ke nee",
+      "contact": "",
+      "rsvp": "pending",
+      "dietary": "",
+      "table": "RDP",
+      "events": [
+        "sg_party"
+      ]
+    },
+    {
+      "name": "avy",
+      "contact": "",
+      "rsvp": "pending",
+      "dietary": "",
+      "table": "RDP",
+      "events": [
+        "sg_party"
+      ]
+    },
+    {
+      "name": "pae",
+      "contact": "",
+      "rsvp": "pending",
+      "dietary": "",
+      "table": "RDP",
+      "events": [
+        "sg_party"
+      ]
+    },
+    {
+      "name": "ts",
+      "contact": "",
+      "rsvp": "pending",
+      "dietary": "",
+      "table": "RDP",
+      "events": [
+        "sg_party"
+      ]
+    },
+    {
+      "name": "ts +1 ",
+      "contact": "",
+      "rsvp": "pending",
+      "dietary": "",
+      "table": "RDP",
+      "events": [
+        "sg_party"
+      ]
+    },
+    {
+      "name": "yj",
+      "contact": "",
+      "rsvp": "pending",
+      "dietary": "",
+      "table": "RDP",
+      "events": [
+        "sg_party"
+      ]
+    },
+    {
+      "name": "yj + 1",
+      "contact": "",
+      "rsvp": "pending",
+      "dietary": "",
+      "table": "RDP",
+      "events": [
+        "sg_party"
+      ]
+    },
+    {
+      "name": "rosy",
+      "contact": "",
+      "rsvp": "pending",
+      "dietary": "",
+      "table": "RDP",
+      "events": [
+        "sg_party"
+      ]
+    },
+    {
+      "name": "sherlyn",
+      "contact": "",
+      "rsvp": "pending",
+      "dietary": "",
+      "table": "RDP",
+      "events": [
+        "sg_party"
+      ]
+    },
+    {
+      "name": "?",
+      "contact": "",
+      "rsvp": "pending",
+      "dietary": "",
+      "table": "RDP",
+      "events": [
+        "sg_party"
+      ]
+    },
+    {
+      "name": "亚伯",
+      "table": "亚伯 + Lara",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "亚伯",
+      "table": "亚伯 + Lara",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Lara",
+      "table": "亚伯 + Lara",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "-",
+      "table": "亚伯 + Lara",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "-",
+      "table": "亚伯 + Lara",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "-",
+      "table": "亚伯 + Lara",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "-",
+      "table": "亚伯 + Lara",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "金龙",
+      "table": "金龙 + Ah Meng",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Ah Meng",
+      "table": "金龙 + Ah Meng",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "-",
+      "table": "金龙 + Ah Meng",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "-",
+      "table": "金龙 + Ah Meng",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "-",
+      "table": "金龙 + Ah Meng",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "-",
+      "table": "金龙 + Ah Meng",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "-",
+      "table": "金龙 + Ah Meng",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "-",
+      "table": "金龙 + Ah Meng",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Koh Poh Seng",
+      "table": "Chew Family + Koh Poh Seng",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Koh Poh Seng 2",
+      "table": "Chew Family + Koh Poh Seng",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Chew Family",
+      "table": "Chew Family + Koh Poh Seng",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Chew Family",
+      "table": "Chew Family + Koh Poh Seng",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Chew Family",
+      "table": "Chew Family + Koh Poh Seng",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Chew Family",
+      "table": "Chew Family + Koh Poh Seng",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Chew Family",
+      "table": "Chew Family + Koh Poh Seng",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Chew Family",
+      "table": "Chew Family + Koh Poh Seng",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Chew Family",
+      "table": "Chew Family + Koh Poh Seng",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Chew Family",
+      "table": "Chew Family + Koh Poh Seng",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Ghim Moh",
+      "table": "Chew Ghim Moh + Bishan + Taman Jurong",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Ghim Moh",
+      "table": "Chew Ghim Moh + Bishan + Taman Jurong",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Bishan",
+      "table": "Chew Ghim Moh + Bishan + Taman Jurong",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Bishan",
+      "table": "Chew Ghim Moh + Bishan + Taman Jurong",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Bishan",
+      "table": "Chew Ghim Moh + Bishan + Taman Jurong",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Taman Jurong",
+      "table": "Chew Ghim Moh + Bishan + Taman Jurong",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Taman Jurong",
+      "table": "Chew Ghim Moh + Bishan + Taman Jurong",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Taman Jurong",
+      "table": "Chew Ghim Moh + Bishan + Taman Jurong",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Taman Jurong",
+      "table": "Chew Ghim Moh + Bishan + Taman Jurong",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Chew Toh 1",
+      "table": "Chew Toh",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Person 2",
+      "table": "Chew Toh",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Person 3",
+      "table": "Chew Toh",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Person 4",
+      "table": "Chew Toh",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Person 5",
+      "table": "Chew Toh",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Person 6",
+      "table": "Chew Toh",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Person 7",
+      "table": "Chew Toh",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Person 8",
+      "table": "Chew Toh",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Person 9",
+      "table": "Chew Toh",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Person 10",
+      "table": "Chew Toh",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "姨婆",
+      "table": "姨婆",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Person 2",
+      "table": "姨婆",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Person 3",
+      "table": "姨婆",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Person 4",
+      "table": "姨婆",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Person 5",
+      "table": "姨婆",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "YF Dad Friend 1",
+      "table": "YF Dad Friend 1",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Person 2",
+      "table": "YF Dad Friend 1",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Person 3",
+      "table": "YF Dad Friend 1",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Person 4",
+      "table": "YF Dad Friend 1",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Person 5",
+      "table": "YF Dad Friend 1",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Person 6",
+      "table": "YF Dad Friend 1",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Person 7",
+      "table": "YF Dad Friend 1",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Person 8",
+      "table": "YF Dad Friend 1",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Person 9",
+      "table": "YF Dad Friend 1",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Person 10",
+      "table": "YF Dad Friend 1",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "YF Dad Friend 2",
+      "table": "YF Dad Friend 2",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Person 2",
+      "table": "YF Dad Friend 2",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Person 3",
+      "table": "YF Dad Friend 2",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Person 4",
+      "table": "YF Dad Friend 2",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Person 5",
+      "table": "YF Dad Friend 2",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Person 6",
+      "table": "YF Dad Friend 2",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Person 7",
+      "table": "YF Dad Friend 2",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Person 8",
+      "table": "YF Dad Friend 2",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Person 9",
+      "table": "YF Dad Friend 2",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Person 10",
+      "table": "YF Dad Friend 2",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "YF Mum Friend 1",
+      "table": "YF Mum Friend 1",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Person 2",
+      "table": "YF Mum Friend 1",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Person 3",
+      "table": "YF Mum Friend 1",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Person 4",
+      "table": "YF Mum Friend 1",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Person 5",
+      "table": "YF Mum Friend 1",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Person 6",
+      "table": "YF Mum Friend 1",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Person 7",
+      "table": "YF Mum Friend 1",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Person 8",
+      "table": "YF Mum Friend 1",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Person 9",
+      "table": "YF Mum Friend 1",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Person 10",
+      "table": "YF Mum Friend 1",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "JH Mum Friends 1",
+      "table": "JH Mum Friends 1",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Person 2",
+      "table": "JH Mum Friends 1",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Person 3",
+      "table": "JH Mum Friends 1",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Person 4",
+      "table": "JH Mum Friends 1",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Person 5",
+      "table": "JH Mum Friends 1",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Person 6",
+      "table": "JH Mum Friends 1",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Person 7",
+      "table": "JH Mum Friends 1",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Person 8",
+      "table": "JH Mum Friends 1",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Person 9",
+      "table": "JH Mum Friends 1",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Person 10",
+      "table": "JH Mum Friends 1",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "JH Dad Friends 1",
+      "table": "JH Dad Friends 1",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Person 2",
+      "table": "JH Dad Friends 1",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Person 3",
+      "table": "JH Dad Friends 1",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Person 4",
+      "table": "JH Dad Friends 1",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Person 5",
+      "table": "JH Dad Friends 1",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Person 6",
+      "table": "JH Dad Friends 1",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Person 7",
+      "table": "JH Dad Friends 1",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Person 8",
+      "table": "JH Dad Friends 1",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Person 9",
+      "table": "JH Dad Friends 1",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Person 10",
+      "table": "JH Dad Friends 1",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_wedding"
+      ]
+    },
+    {
+      "name": "Zj",
+      "table": "PlayPark 2",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_party"
+      ]
+    },
+    {
+      "name": "Sabitha",
+      "table": "PlayPark 2",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_party"
+      ]
+    },
+    {
+      "name": "Tiff",
+      "table": "PlayPark 2",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_party"
+      ]
+    },
+    {
+      "name": "Sean",
+      "table": "PlayPark 2",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_party"
+      ]
+    },
+    {
+      "name": "Zaeem",
+      "table": "PlayPark 2",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_party"
+      ]
+    },
+    {
+      "name": "YL?",
+      "table": "PlayPark 2",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": "",
+      "events": [
+        "sg_party"
+      ]
+    },
+    {
+      "name": "Rubini",
+      "table": "PlayPark 2",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": ""
+    }
+  ],
+  "vendors": {
+    "Photographer": [
+      {
+        "name": "The Onlookers",
+        "package": "",
+        "price": "",
+        "notes": "https://www.instagram.com/theonlookers.co?igsh=aWxwbnJvMDQ3MnFp",
+        "selected": false
+      },
+      {
+        "name": "Amelia Yeo",
+        "package": "",
+        "price": "Amelia Yeo",
+        "notes": "https://www.ameliayeo.me/",
+        "selected": true
+      }
+    ],
+    "Videographer": [
+      {
+        "name": "The Onlookers",
+        "package": "",
+        "price": "",
+        "notes": "https://www.instagram.com/theonlookers.co?igsh=aWxwbnJvMDQ3MnFp",
+        "selected": false
+      }
+    ],
+    "MUA": [
+      {
+        "name": "Cherie Tay MUA",
+        "package": "",
+        "price": "",
+        "notes": "https://www.instagram.com/cherietay.mua?igsh=cXlrcm9wcXN6aDVw",
+        "selected": true
+      },
+      {
+        "name": "Stella Ang Make Up",
+        "package": "",
+        "price": "",
+        "notes": "https://www.stellaangmakeup.com/?utm_content=link_in_bio&fbclid=PAdGRleAPsM4tleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAaeF2qyOzuDk49ar3nUAFB_bN0gkbsqWaiz0rd1i8YQ7oQkhWvl6CkCvGsS5NQ_aem_sZxIU8Jhgqm8JkHjsDIZeg&utm_source=ig&utm_medium=social",
+        "selected": false
+      },
+      {
+        "name": "",
+        "package": "",
+        "price": "",
+        "notes": "",
+        "selected": false
+      }
+    ],
+    "Photobooth": [],
+    "Gown": [
+      {
+        "name": "Digio Bridal",
+        "package": "",
+        "price": "",
+        "notes": "instagram.com/digiobridal?igsh=MWRrdjAyZXk5aTEwZg==",
+        "selected": false
+      },
+      {
+        "name": "Rico-A-Mona Bridal",
+        "package": "",
+        "price": "",
+        "notes": "https://www.instagram.com/ricoamona?igsh=cmk0dmUxM3pwcDcw",
+        "selected": false
+      },
+      {
+        "name": "Outpost Clothing",
+        "package": "",
+        "price": "",
+        "notes": "https://www.instagram.com/outpostsg?igsh=d244YWowNm5mbHUz",
+        "selected": false
+      },
+      {
+        "name": "Vico Bridal",
+        "package": "",
+        "price": "",
+        "notes": "https://www.instagram.com/vico_bridal?igsh=aGk1eXNmZGw5Y2di",
+        "selected": false
+      }
+    ],
+    "Suit": [],
+    "Caterer": [
+      {
+        "name": "Chui Huay Lim Teochiew Cusine",
+        "package": "Celestial 8 Course",
+        "price": "$1799++ per table",
+        "notes": "Per Restaurant Meal",
+        "selected": true
+      }
+    ]
+  },
+  "music": {
+    "Ceremony": [
+      {
+        "song": "",
+        "artist": "",
+        "notes": "ROM"
+      }
+    ],
+    "March-in": [
+      {
+        "song": "Lovin",
+        "artist": "Mrs. GREEN APPLE",
+        "notes": ""
+      }
+    ],
+    "Dinner": [],
+    "Games": []
+  },
+  "photos": {
+    "Pre-ceremony": [
+      "Getting ready shots",
+      "Detail shots (rings, dress, shoes)"
+    ],
+    "Ceremony": [
+      "Vow exchange",
+      "Ring exchange",
+      "First kiss"
+    ],
+    "Family": [
+      "Immediate family both sides",
+      "Extended family"
+    ],
+    "Couple": [
+      "Lighthouse shots",
+      "Golden hour portraits"
+    ]
+  },
+  "importantDates": [
+    {
+      "date": "",
+      "task": "File ROM license (21 days - 2 months before)",
+      "done": false
+    },
+    {
+      "date": "",
+      "task": "Confirm final guest count with venue",
+      "done": false
+    },
+    {
+      "date": "",
+      "task": "Final payment to venue",
+      "done": false
+    }
+  ],
+  "playpark": {
+    "pitch": "Employee wedding as authentic MapleStory fan content opportunity - we've done maple weddings for players, why not spotlight one for our own team?",
+    "items": [
+      {
+        "item": "Interactive avatar screen (dev + hardware)",
+        "estValue": "2000-5000",
+        "approved": false
+      },
+      {
+        "item": "Photobooth with MapleStory templates",
+        "estValue": "500-1500",
+        "approved": false
+      },
+      {
+        "item": "MapleStory decor/props",
+        "estValue": "500-1000",
+        "approved": false
+      },
+      {
+        "item": "Swag for guests",
+        "estValue": "500-1500",
+        "approved": false
+      }
+    ],
+    "status": "not_started",
+    "deliverables": "",
+    "pitchTo": "",
+    "deadline": ""
+  },
+  "contacts": [
+    {
+      "type": "Venue",
+      "name": "Raffles Marina",
+      "phone": "",
+      "email": "",
+      "notes": ""
+    },
+    {
+      "type": "Photographer",
+      "name": "",
+      "phone": "",
+      "email": "",
+      "notes": ""
+    },
+    {
+      "type": "Videographer",
+      "name": "",
+      "phone": "",
+      "email": "",
+      "notes": ""
+    },
+    {
+      "type": "MUA",
+      "name": "",
+      "phone": "",
+      "email": "",
+      "notes": ""
+    },
+    {
+      "type": "Solemniser",
+      "name": "",
+      "phone": "",
+      "email": "",
+      "notes": ""
+    }
+  ],
+  "notes": "",
+  "phases": {
+    "foundation": {
+      "dateSelected": true,
+      "budgetConfirmed": true,
+      "guestCountEstimated": true,
+      "visionDefined": false
+    },
+    "venue": {
+      "venueSelected": true,
+      "cateringConfirmed": true,
+      "venueBooked": true
+    },
+    "ceremony": {
+      "romDateSelected": true
+    },
+    "vendors": {
+      "photographerBooked": true,
+      "muaBooked": true
+    }
+  },
+  "inspiration": {},
+  "events": {
+    "sg_wedding": {
+      "venue": "Chui Huay Lim Teochew Cuisine",
+      "venueNotes": "Site viewing on 24th Feb 2026, https://www.youtube.com/shorts/tMLpCYO_V84",
+      "date": "2026-12-20",
+      "status": "venue_viewing",
+      "estPax": 200
+    },
+    "my_dinner": {
+      "venue": "Hu Jing Ge Chinese Restaurant",
+      "venueNotes": "Before 18 Jan (CNY) https://flemingtonhotel.com.my/meeting-event/",
+      "date": "2027-01-18",
+      "status": "planning",
+      "estPax": 70
+    },
+    "sg_party": {
+      "venue": "",
+      "venueNotes": "no rush",
+      "date": "",
+      "status": "planning",
+      "estPax": 50
+    }
+  },
+  "weddingParty": {},
+  "ceremonyDetails": {
+    "romDate": "2026-10-10",
+    "romLocation": "ROM Building",
+    "guoDaLiDate": "2026-11-29"
+  },
+  "logistics": {},
+  "guoDaLi": {
+    "date": "2026-12-13",
+    "status": "planning",
+    "notes": "",
+    "items": [
+      {
+        "name": "Dragon Phoenix Candles (龙凤烛)",
+        "qty": "1 pair",
+        "checked": false,
+        "notes": ""
+      },
+      {
+        "name": "Dragon Phoenix Biscuits (龙凤饼)",
+        "qty": "2 boxes",
+        "checked": false,
+        "notes": ""
+      },
+      {
+        "name": "Roasted Pig (烧猪/烧肉)",
+        "qty": "1",
+        "checked": false,
+        "notes": "Can be half pig or whole"
+      },
+      {
+        "name": "Pig Leg (猪脚)",
+        "qty": "1",
+        "checked": false,
+        "notes": ""
+      },
+      {
+        "name": "Liquor / Wine (酒)",
+        "qty": "2-4 bottles",
+        "checked": false,
+        "notes": ""
+      },
+      {
+        "name": "Tea Leaves (茶叶)",
+        "qty": "1 set",
+        "checked": false,
+        "notes": "Symbolises loyalty"
+      },
+      {
+        "name": "Sesame Seeds / Peanuts (芝麻/花生)",
+        "qty": "1 pack each",
+        "checked": false,
+        "notes": "Fertility symbol"
+      },
+      {
+        "name": "Dried Longan & Red Dates (龙眼红枣)",
+        "qty": "1 pack",
+        "checked": false,
+        "notes": "Sweet marriage"
+      },
+      {
+        "name": "Jewellery (金器/首饰)",
+        "qty": "TBD",
+        "checked": false,
+        "notes": "Necklace, bracelet, ring, earrings"
+      },
+      {
+        "name": "Betrothal Money / Pin Jin (聘金)",
+        "qty": "TBD",
+        "checked": false,
+        "notes": "Red packet — amount to discuss"
+      },
+      {
+        "name": "Red Packets (红包)",
+        "qty": "Various",
+        "checked": false,
+        "notes": "For helpers, elders, etc."
+      },
+      {
+        "name": "Wedding Cakes (喜饼)",
+        "qty": "TBD",
+        "checked": false,
+        "notes": "For bride to distribute"
+      }
+    ]
+  }
+}
