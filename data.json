@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "4.0",
-    "lastUpdated": "2026-03-22T08:23:32.766Z"
+    "lastUpdated": "2026-03-22T08:23:40.786Z"
   },
   "couple": {
     "partner1": {
@@ -2302,7 +2302,7 @@
         "package": "",
         "price": "",
         "notes": "https://www.instagram.com/ricoamona?igsh=cmk0dmUxM3pwcDcw",
-        "selected": false
+        "selected": true
       },
       {
         "name": "Outpost Clothing",
