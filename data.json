@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "4.0",
-    "lastUpdated": "2026-03-22T08:23:40.786Z"
+    "lastUpdated": "2026-03-22T08:23:51.894Z"
   },
   "couple": {
     "partner1": {
@@ -2319,7 +2319,15 @@
         "selected": false
       }
     ],
-    "Suit": [],
+    "Suit": [
+      {
+        "name": "Rico-A-Mona Bridal",
+        "package": "",
+        "price": "",
+        "notes": "https://www.instagram.com/ricoamona?igsh=cmk0dmUxM3pwcDcw",
+        "selected": true
+      }
+    ],
     "Caterer": [
       {
         "name": "Chui Huay Lim Teochiew Cusine",
