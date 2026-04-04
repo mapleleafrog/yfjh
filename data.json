@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "4.0",
-    "lastUpdated": "2026-04-04T05:53:36.484Z"
+    "lastUpdated": "2026-04-04T05:54:53.616Z"
   },
   "couple": {
     "partner1": {
@@ -2504,18 +2504,18 @@
         "added": "2026-03-22T08:26:31.121Z"
       },
       {
-        "type": "text",
-        "title": "Google Maps timeline with Pikmin/Others",
-        "content": "Pikmin styled maps to show key locations of our together time",
-        "status": "idea",
-        "added": "2026-04-04T05:52:16.850Z"
-      },
-      {
         "type": "image",
         "url": "https://pbs.twimg.com/media/HEt7Wy2XIAAU03o.jpg",
         "caption": "pikmin/maple filters for photos",
         "status": "idea",
         "added": "2026-04-04T05:53:36.484Z"
+      },
+      {
+        "type": "image",
+        "url": "https://i.redd.it/an-unofficial-english-translation-of-the-kaohsiung-tour-map-v0-jr16uw5m1isf1.png?width=3369&format=png&auto=webp&s=146bdf5a02f19a61bc7697ab02fdb02af60cf099",
+        "caption": "Pikmin Bloom inspired map with pikmin/maple to show key locations of our together life",
+        "status": "idea",
+        "added": "2026-04-04T05:54:48.126Z"
       }
     ],
     "digital": [
