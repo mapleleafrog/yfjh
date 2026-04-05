@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "4.0",
-    "lastUpdated": "2026-04-05T10:19:06.694Z"
+    "lastUpdated": "2026-04-05T10:38:05.436Z"
   },
   "couple": {
     "partner1": {
@@ -2550,6 +2550,15 @@
         "caption": "Final same day edit, to use GOOD DAY by Mrs Green Apple",
         "status": "considering",
         "added": "2026-04-05T10:19:06.691Z"
+      }
+    ],
+    "reception": [
+      {
+        "type": "image",
+        "url": "https://mrsgreenapple.com/static2/prod/public/mga/contents/information/1d27958c8012c5472048190a93860f1f.jpeg",
+        "caption": "<b>Music</b> play instrumental music like maple mush castle, pikmin, instrumental tracks\n\nWhen starting soon, play Lovin by MGA, tone music up and get guests seated\n\nThen after lovin, play life video in dark",
+        "status": "considering",
+        "added": "2026-04-05T10:38:05.436Z"
       }
     ]
   },
