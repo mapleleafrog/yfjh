@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "4.0",
-    "lastUpdated": "2026-04-07T09:49:14.836Z"
+    "lastUpdated": "2026-04-07T09:49:21.356Z"
   },
   "couple": {
     "partner1": {
@@ -2288,9 +2288,9 @@
       {
         "name": "Enfold Visuals",
         "package": "",
-        "price": "",
+        "price": "3588",
         "notes": "",
-        "selected": false
+        "selected": true
       }
     ],
     "MUA": [
