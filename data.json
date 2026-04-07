@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "4.0",
-    "lastUpdated": "2026-04-07T09:49:21.356Z"
+    "lastUpdated": "2026-04-07T09:49:38.568Z"
   },
   "couple": {
     "partner1": {
@@ -2505,7 +2505,8 @@
     "vendors": {
       "photographerBooked": true,
       "muaBooked": true,
-      "bridalBooked": true
+      "bridalBooked": true,
+      "videographerBooked": true
     }
   },
   "inspiration": {
