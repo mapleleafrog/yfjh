@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "4.0",
-    "lastUpdated": "2026-04-07T09:46:33.238Z"
+    "lastUpdated": "2026-04-07T09:46:37.929Z"
   },
   "couple": {
     "partner1": {
@@ -380,13 +380,13 @@
     "F&B": [
       {
         "name": "20 tables @ venue rate",
-        "lowEst": 14250,
+        "lowEst": 0,
         "highEst": 15450,
         "actual": 30000
       },
       {
         "name": "ROM solemnisation add-on",
-        "lowEst": 240,
+        "lowEst": 0,
         "highEst": 240,
         "actual": null
       },
