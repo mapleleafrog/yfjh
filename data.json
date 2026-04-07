@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "4.0",
-    "lastUpdated": "2026-04-07T10:12:42.968Z"
+    "lastUpdated": "2026-04-07T10:12:50.256Z"
   },
   "couple": {
     "partner1": {
@@ -466,6 +466,12 @@
         "name": "Car decoration",
         "lowEst": 50,
         "highEst": 150,
+        "actual": null
+      },
+      {
+        "name": "Cherie Tay MUA",
+        "lowEst": 0,
+        "highEst": 0,
         "actual": null
       }
     ],
