@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "4.0",
-    "lastUpdated": "2026-04-07T09:46:37.929Z"
+    "lastUpdated": "2026-04-07T09:46:43.452Z"
   },
   "couple": {
     "partner1": {
@@ -428,7 +428,7 @@
         "name": "Bride gown rental (2 looks)",
         "lowEst": 1500,
         "highEst": 3000,
-        "actual": null
+        "actual": 2600
       },
       {
         "name": "Groom suit rental (2 looks)",
