@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "4.0",
-    "lastUpdated": "2026-04-07T10:10:28.434Z"
+    "lastUpdated": "2026-04-07T10:11:50.233Z"
   },
   "couple": {
     "partner1": {
@@ -434,7 +434,7 @@
         "name": "Groom suit rental (2 looks)",
         "lowEst": 500,
         "highEst": 1200,
-        "actual": 600
+        "actual": 800
       },
       {
         "name": "Accessories",
