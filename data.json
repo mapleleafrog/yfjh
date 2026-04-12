@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "4.0",
-    "lastUpdated": "2026-04-12T11:26:52.555Z"
+    "lastUpdated": "2026-04-12T11:27:03.107Z"
   },
   "couple": {
     "partner1": {
@@ -1011,7 +1011,7 @@
       "name": "amin",
       "contact": "",
       "rsvp": "pending",
-      "dietary": "",
+      "dietary": "Vegetarian",
       "table": "YF School",
       "events": [
         "sg_party"
