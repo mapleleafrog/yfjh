@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "4.0",
-    "lastUpdated": "2026-04-12T11:37:29.112Z"
+    "lastUpdated": "2026-04-12T11:42:54.247Z"
   },
   "couple": {
     "partner1": {
@@ -2060,6 +2060,13 @@
     {
       "name": "Rubini",
       "table": "PlayPark 2",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": ""
+    },
+    {
+      "name": "Ah Ming",
+      "table": "Ah Ming + Close Chua Family",
       "rsvp": "pending",
       "dietary": "",
       "contact": ""
