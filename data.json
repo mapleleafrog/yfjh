@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "4.0",
-    "lastUpdated": "2026-04-12T11:45:57.472Z"
+    "lastUpdated": "2026-04-12T11:46:22.478Z"
   },
   "couple": {
     "partner1": {
@@ -2074,6 +2074,13 @@
     {
       "name": "Chew Goh 1",
       "table": "Chew Goh",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": ""
+    },
+    {
+      "name": "Da Yi Po",
+      "table": "Chua Yi Po side",
       "rsvp": "pending",
       "dietary": "",
       "contact": ""
