@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "4.0",
-    "lastUpdated": "2026-04-12T11:42:54.247Z"
+    "lastUpdated": "2026-04-12T11:44:50.749Z"
   },
   "couple": {
     "partner1": {
@@ -2067,6 +2067,13 @@
     {
       "name": "Ah Ming",
       "table": "Ah Ming + Close Chua Family",
+      "rsvp": "pending",
+      "dietary": "",
+      "contact": ""
+    },
+    {
+      "name": "Chew Goh 1",
+      "table": "Chew Goh",
       "rsvp": "pending",
       "dietary": "",
       "contact": ""
